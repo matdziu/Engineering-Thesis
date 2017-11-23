@@ -1,12 +1,12 @@
 \contentsline {section}{\numberline {1}Problem definition}{1}{section.1}
 \contentsline {section}{\numberline {2}Solution overview}{2}{section.2}
-\contentsline {section}{\numberline {3}Introduction to Artificial Intelligence}{2}{section.3}
-\contentsline {section}{\numberline {4}Introduction to Neural Networks}{2}{section.4}
-\contentsline {section}{\numberline {5}Introduction to Convolutional Neural Networks}{2}{section.5}
-\contentsline {section}{\numberline {6}Comparison of world-class CNN architectures}{2}{section.6}
-\contentsline {section}{\numberline {7}Transfer learning}{2}{section.7}
-\contentsline {section}{\numberline {8}Data augmentation}{2}{section.8}
-\contentsline {section}{\numberline {9}Solution walkthrough}{2}{section.9}
-\contentsline {section}{\numberline {10}Testing}{2}{section.10}
-\contentsline {section}{\numberline {11}Related solutions}{2}{section.11}
-\contentsline {section}{\numberline {12}Conclusions}{2}{section.12}
+\contentsline {section}{\numberline {3}Introduction to Artificial Intelligence}{3}{section.3}
+\contentsline {section}{\numberline {4}Introduction to Neural Networks}{4}{section.4}
+\contentsline {section}{\numberline {5}Introduction to Convolutional Neural Networks}{5}{section.5}
+\contentsline {section}{\numberline {6}Comparison of world-class CNN architectures}{6}{section.6}
+\contentsline {section}{\numberline {7}Transfer learning}{7}{section.7}
+\contentsline {section}{\numberline {8}Data augmentation}{8}{section.8}
+\contentsline {section}{\numberline {9}Solution walkthrough}{9}{section.9}
+\contentsline {section}{\numberline {10}Testing}{10}{section.10}
+\contentsline {section}{\numberline {11}Related solutions}{11}{section.11}
+\contentsline {section}{\numberline {12}Conclusions}{12}{section.12}
