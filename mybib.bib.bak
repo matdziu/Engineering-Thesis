@@ -59,7 +59,6 @@ year = {2017},
   author={LeCun, Yann and Haffner, Patrick and Bottou, L{\'e}on and Bengio, Yoshua},
   journal={Shape, contour and grouping in computer vision},
   year={1999},
-  publisher={Springer}
 }
 
 @misc{rgb_def,
