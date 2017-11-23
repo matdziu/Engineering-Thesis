@@ -1,6 +1,38 @@
 \begin{thebibliography}{1}
 
+\bibitem{android_guide}
+{\em Android framework guide}.
+\newblock \url{https://developer.android.com/guide/index.html}, access: October
+  24, 2017.
+
+\bibitem{firebase_database_docs}
+{\em {Firebase Realtime Database} documentation}.
+\newblock \url{https://firebase.google.com/docs/database/}, access: October 24,
+  2017.
+
+\bibitem{flask_docs}
+{\em Flask documentation}.
+\newblock \url{http://flask.pocoo.org/docs/0.12/}, access: October 24, 2017.
+
+\bibitem{survey}
+{\em Survey "{Exploring new beers}"}.
+\newblock \url{https://www.surveymonkey.com/results/SM-S32QWQ578/}, access:
+  October 24, 2017.
+
+\bibitem{cpu_vs_gpu}
+{\em {CPU vs GPU} performance}.
+\newblock
+  \url{http://michaelgalloy.com/2013/06/11/cpu-vs-gpu-performance.html},
+  access: October 26, 2017.
+
+\bibitem{cisco_era}
+{\sc Cisco}, {\em {The Zettabyte Era: Trends and Analysis}}, 2017.
+
 \bibitem{kpmg_alco}
 {\sc KPMG}, {\em The alcoholic beverages market in {Poland}}, 2014.
+
+\bibitem{ai_modern_approach}
+{\sc P.~Norvig and S.~J. Russell}, {\em {Artificial Intelligence: A Modern
+  Approach}}, Prentice Hall, 2010, pp.~5--16, 730.
 
 \end{thebibliography}

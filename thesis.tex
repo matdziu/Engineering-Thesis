@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage{hyperref}
+\usepackage[shortlabels]{enumitem}
 \setlength{\parindent}{0em}
 
 \begin{document}
@@ -13,50 +14,123 @@
 \clearpage
 \setcounter{page}{1}
 
-\section{Problem definition}
+\section{Problem definition} \label{problem_definition}
 KPMG's report on "The alcoholic beverages market in Poland" claims, that in 2013, Poles spent 41.1 billion zlotys on alcohol, with beer being a large portion of that amount (47\%) \cite{kpmg_alco}. The report also states that, as of 2014, Polish customers choose beers based on premiumisation (31\% of customers), innovation (29\%) and region affiliations (30\%), with manufacturers predicting significant rise of interest in those attributes in the future \cite{kpmg_alco}. The evolution in customers' taste and their openness resulted in many local shops offering a vast range of, so called, "craft beers" coming from lesser known breweries. However, it's also not uncommon to stumble upon large product shelves, with dozens different beers types, in more popular Polish stores like Lidl and Carrefour.\\
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{beer_shelf}
 \centering
-\caption{A large beer shelf. Source: \protect \url{http://trib.com}.}.
+\caption{A large beer shelf. Source: \protect \url{http://trib.com}.}
 \label{fig:beer_shelf}
 \end{figure}
 
 The question this thesis posed at first was "How technology could be used to help a customer, who stands in front of a supermarket's large beer shelf (\autoref{fig:beer_shelf}.) and tries to choose one, not knowing anything about beers?". The answer appeared to be relatively simple and involved developing a mobile application, which could connect to beer database residing in Cloud e. g. Firebase Realtime Database and retrieve details about any given beer. The real problem, that later emerged, and is in fact the basis of this thesis, is "Given a mobile application, that can connect to beer database in Cloud, what is the most intuitive, appealing and fastest way of accessing this database from the device?".
 \clearpage
 
-\section{Solution overview}
+\section{Solution overview} \label{solution_overview}
+To further investigate the problem articulated in Chapter \ref{problem_definition}, I conducted a survey \cite{survey}. Its main question, that I want to focus on in this section, was "Imagine standing in front of a big shelf with hundreds of craft beers you've never seen before. There's no one there to help you except a mobile app with beer database, which you can access in different ways: typing beer name, using voice to input beer name, making photo of front beer label, making photo of bar code in the back of the bottle. Rank those ways starting from the one that's the most intuitive and appealing to you.". Interestingly, the most popular option, among 50 people asked, was making a photo of front beer label. This method of database access was almost equally popular to the most standard human-device communication interface, which is keyboard (typing a beer name). Whereas \autoref{fig:survey_chart} presents the overall trend, \autoref{fig:survey_table} provides us with detailed numbers: 60\% of people chose, in either first or second place, making a photo of front beer label as their preference (same as in typing a beer name by hand). The last thing that's worth noting is the lack of popularity of barcode scanning.\\
+
+Based on the aforementioned survey and my personal experience, I want to formulate a solution to the problem, stated in Chapter \ref{problem_definition}, as a design and implementation of server-client recognition system for beer labels.
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{survey_chart}
+\centering
+\caption{Weighted average of respondents' answers (chart). For choosing an option as first - weight: 4, for choosing an option as second - weight: 3 etc. Obtained sum is then divided by total number of respondents (here: 50).}
+\label{fig:survey_chart}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{survey_table}
+\centering
+\caption{Weighted average of respondents' answers (table with details). For method of average calculation see: \autoref{fig:survey_chart}.}
+\label{fig:survey_table}
+\end{figure}
+
+The goal of this section is to give a reader, in a few short points, an overall idea of the recognition system before theoretical introduction. Chapter \ref{solution_walkthrough} focuses on implementation details. \autoref{fig:scheme} presents a scheme with a functional principle of implemented server-client beer label recognizer, namely:
+\begin{enumerate}
+\item An image of beer label is taken by the Android \cite{android_guide} application. 
+\item Android application sends the image to the Flask \cite{flask_docs} server equipped with algorithm, which performs beer label prediction.
+\item Encoded prediction is returned to Android application.
+\item Encoded prediction is used as a key to the beer database residing in Firebase Cloud \cite{firebase_database_docs}.
+\item Based on the key (encoded label name) all information about given beer is sent to Android application and displayed to the user.
+\end{enumerate}
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{scheme}
+\centering
+\caption{Server-client recognition system for beer labels with functional principle (consecutive steps enumerated).}
+\label{fig:scheme}
+\end{figure}
 \clearpage
 
-\section{Introduction to Artificial Intelligence}
+\section{Introduction to Artificial Intelligence} \label{introduction_to_ai}
+There are many approaches to define Artificial Intelligence (AI), but perhaps the most famous is the one formed by Alan Turing in 1950. The proposed method, referred to as Turing test, involved human subject asking written questions to a computer and receiving written answers. If the interrogator couldn't tell if responses came from a human or a machine - the test was passed, i. e. the computer was considered intelligent (at least in some sense). Even stricter rules were imposed on conduction of, so called, total Turing test. In addition to requirements mentioned previously, a computer needed to fool a human subject through a proper visual perception and human-like object manipulations (robotics).\\
+
+Achieving a feat of passing either of aforementioned tests requires multidisciplinary knowledge in many fields. Norvig and Russell did a remarkable job of listing major disciplines, that contributed to the growth of AI \cite{ai_modern_approach}, namely:
+\begin{enumerate}[a)]
+\item philosophy
+\item mathematics
+\item economics
+\item neuroscience
+\item psychology
+\item computer engineering
+\item control theory and cybernetics
+\item linguistics
+\end{enumerate}
+Despite invaluable contributions from greatest minds in above fields, the Holy Grail of some researchers - Artificial General Intelligence, often called "strong AI", capable of performing any intellectual task of human being - is still far ahead. Focus of many scientists, and also of this thesis, is, conversely, on creating algorithm, which behaves in an intelligent manner in a specific area of expertise (e. g. computer vision), but fails miserably in others (e. g. voice recognition). A big part of this approach revolves around a branch of Artificial Intelligence called supervised learning. \\
+
+In essence, supervised learning is inference of correct outputs from given inputs based on labeled training set. Examples of this include:
+\begin{enumerate}[a)]
+\item given an email, is it spam or not?
+\item given an image, does it contain face or not?
+\item given an audio clip, what is the correct transcript?
+\item given a Polish sentence, what is semantically correct English translation?
+\item given a beer label image, what is the name of the beer?
+\end{enumerate}
+Prerequisites of performing such tasks are, usually, a large amount of data (e. g. actual emails correctly marked as spam or not) and big computational power (powerful Graphics Processing Units, High-Performance Computing), both of which significantly increased over the past years (\autoref{fig:cpu_gpu}, \autoref{fig:cisco_era}).\\
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{cpu_gpu}
+\centering
+\caption{Performance of NVIDIA GPUs and Intel CPUs measured in GFLOP/s \cite{cpu_vs_gpu}.}
+\label{fig:cpu_gpu}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{cisco_era}
+\centering
+\caption{Global IP traffic by devices \cite{cisco_era} with 24\% compound annual growth rate (2016-2021).}
+\label{fig:cisco_era}
+\end{figure}
+
+I want to conclude this chapter with important distinction between Machine Learning (ML) and Artificial Intelligence. The former is considered to be a subset of the latter. Whereas AI comprises of knowledge base systems, genetic algorithms, Bayesian statistics etc., none of that is considered ML. Machine Learning can be defined as an act of optimization along a certain dimension (e. g. minimizing the error of choosing a wrong prediction of a beer label based on an image) and a primary tool for that is an algorithm called neural network, loosely based on a human brain cell.
 \clearpage
 
-\section{Introduction to Neural Networks}
+\section{Introduction to Neural Networks} \label{introduction_to_nn}
 \clearpage
 
-\section{Introduction to Convolutional Neural Networks}
+\section{Introduction to Convolutional Neural Networks} \label{introduction_to_cnns}
 \clearpage
 
-\section{Comparison of world-class CNN architectures}
+\section{Comparison of world-class CNN architectures} \label{comparison_ccn_archs}
 \clearpage
 
-\section{Transfer learning}
+\section{Transfer learning} \label{transfer_learning}
 \clearpage
 
-\section{Data augmentation}
+\section{Data augmentation} \label{data_augmentation}
 \clearpage
 
-\section{Solution walkthrough}
+\section{Solution walkthrough} \label{solution_walkthrough}
 \clearpage
 
-\section{Testing}
+\section{Testing} \label{testing}
 \clearpage
 
-\section{Related solutions}
+\section{Related solutions} \label{related_solutions}
 \clearpage
 
-\section{Conclusions}
+\section{Conclusions} \label{conclusions}
 \clearpage
 
 \bibliography{mybib}
