@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.23)  23 NOV 2017 20:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.23)  23 NOV 2017 22:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -459,23 +459,99 @@ File: images/cisco_era.png Graphic file (type png)
 Package pdftex.def Info: images/cisco_era.png used on input line 100.
 (pdftex.def)             Requested size: 234.87769pt x 93.20993pt.
  [5 <./images/cpu_gpu.png> <./images/cisco_era.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 116--117
+
+ []
+
+<images/no_activation_net.png, id=166, 634.37pt x 333.245pt>
+File: images/no_activation_net.png Graphic file (type png)
+
+<use images/no_activation_net.png>
+Package pdftex.def Info: images/no_activation_net.png used on input line 119.
+(pdftex.def)             Requested size: 234.87769pt x 123.38515pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
 [6
 
-] [7
+ <./images/no_activation_net.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
-] [8
+ []
 
-] [9
+<images/probability_vectors.png, id=190, 625.33624pt x 407.5225pt>
+File: images/probability_vectors.png Graphic file (type png)
 
-] [10
+<use images/probability_vectors.png>
+Package pdftex.def Info: images/probability_vectors.png used on input line 155.
 
-] [11
+(pdftex.def)             Requested size: 234.87769pt x 153.06306pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
+
+ []
+
+<images/activation_net.png, id=195, 605.26125pt x 435.6275pt>
+File: images/activation_net.png Graphic file (type png)
+
+<use images/activation_net.png>
+Package pdftex.def Info: images/activation_net.png used on input line 173.
+(pdftex.def)             Requested size: 234.87769pt x 169.04985pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./images/probability_vectors.png>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+
+ []
+
+<images/simple_net.png, id=214, 463.7325pt x 107.40125pt>
+File: images/simple_net.png Graphic file (type png)
+
+<use images/simple_net.png>
+Package pdftex.def Info: images/simple_net.png used on input line 201.
+(pdftex.def)             Requested size: 234.87769pt x 54.3986pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8 <./images/activation_net.png>]
+<images/backprop.png, id=232, 458.71375pt x 146.5475pt>
+File: images/backprop.png Graphic file (type png)
+
+<use images/backprop.png>
+Package pdftex.def Info: images/backprop.png used on input line 218.
+(pdftex.def)             Requested size: 234.87769pt x 75.03786pt.
+ [9 <./images/simple_net.png> <./images/backprop.png>] [10] [11
 
 ] [12
 
 ] [13
 
 ] [14
+
+] [15
+
+] [16
+
+] [17
+
+] [18
 
 ] (./thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 23--27
@@ -484,36 +560,45 @@ t/m/n/10.95 http : / / michaelgalloy . com / 2013 / 06 / 11 /
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
- [15
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 267.
+ [19
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 267.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 267.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 267.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: EF93445904152AE94FA6731BD2DA050B;708.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 267.
  ) 
 Here is how much of TeX's memory you used:
- 6804 strings out of 492995
- 98937 string characters out of 6132703
- 196348 words of memory out of 5000000
- 10217 multiletter control sequences out of 15000+600000
+ 6880 strings out of 492995
+ 100226 string characters out of 6132703
+ 197769 words of memory out of 5000000
+ 10259 multiletter control sequences out of 15000+600000
  10016 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,5n,32p,1271b,421s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on thesis.pdf (16 pages, 3032804 bytes).
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on thesis.pdf (20 pages, 3699945 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 127 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 373 PDF objects out of 1000 (max. 8388607)
+ 307 compressed objects within 4 object streams
+ 91 named destinations out of 1000 (max. 500000)
+ 152 words of extra memory for PDF output out of 10000 (max. 10000000)
 

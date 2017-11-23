@@ -12,45 +12,46 @@ Warning--to sort, need author or key in android_guide
 Warning--to sort, need author or key in flask_docs
 Warning--to sort, need author or key in firebase_database_docs
 Warning--to sort, need author or key in cpu_vs_gpu
-You've used 8 entries,
+Warning--to sort, need author or key in chain_rule_def
+You've used 9 entries,
             2030 wiz_defined-function locations,
-            528 strings with 4464 characters,
-and the built_in function-call counts, 1598 in all, are:
-= -- 134
-> -- 32
+            532 strings with 4569 characters,
+and the built_in function-call counts, 1757 in all, are:
+= -- 148
+> -- 33
 < -- 0
-+ -- 17
++ -- 18
 - -- 8
-* -- 91
-:= -- 223
-add.period$ -- 13
-call.type$ -- 8
-change.case$ -- 27
+* -- 99
+:= -- 242
+add.period$ -- 15
+call.type$ -- 9
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 76
-empty$ -- 194
+cite$ -- 15
+duplicate$ -- 84
+empty$ -- 216
 format.name$ -- 8
-if$ -- 363
+if$ -- 401
 int.to.chr$ -- 0
-int.to.str$ -- 8
+int.to.str$ -- 9
 missing$ -- 2
-newline$ -- 32
+newline$ -- 36
 num.names$ -- 6
-pop$ -- 61
+pop$ -- 68
 preamble$ -- 1
-purify$ -- 20
+purify$ -- 22
 quote$ -- 0
-skip$ -- 58
+skip$ -- 64
 stack$ -- 0
-substring$ -- 71
-swap$ -- 15
+substring$ -- 76
+swap$ -- 16
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 30
-warning$ -- 5
+type$ -- 34
+warning$ -- 6
 while$ -- 8
-width$ -- 9
-write$ -- 65
-(There were 7 warnings)
+width$ -- 10
+write$ -- 73
+(There were 8 warnings)

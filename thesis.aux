@@ -43,31 +43,56 @@
 \newlabel{fig:cpu_gpu}{{5}{5}{Performance of NVIDIA GPUs and Intel CPUs measured in GFLOP/s \cite {cpu_vs_gpu}}{figure.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Global IP traffic by devices \cite  {cisco_era} with 24\% compound annual growth rate (2016-2021).}}{5}{figure.6}}
 \newlabel{fig:cisco_era}{{6}{5}{Global IP traffic by devices \cite {cisco_era} with 24\% compound annual growth rate (2016-2021)}{figure.6}{}}
+\citation{ai_modern_approach}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Introduction to Neural Networks}{6}{section.4}}
 \newlabel{introduction_to_nn}{{4}{6}{Introduction to Neural Networks}{section.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Introduction to Convolutional Neural Networks}{7}{section.5}}
-\newlabel{introduction_to_cnns}{{5}{7}{Introduction to Convolutional Neural Networks}{section.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Comparison of world-class CNN architectures}{8}{section.6}}
-\newlabel{comparison_ccn_archs}{{6}{8}{Comparison of world-class CNN architectures}{section.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Transfer learning}{9}{section.7}}
-\newlabel{transfer_learning}{{7}{9}{Transfer learning}{section.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Data augmentation}{10}{section.8}}
-\newlabel{data_augmentation}{{8}{10}{Data augmentation}{section.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Solution walkthrough}{11}{section.9}}
-\newlabel{solution_walkthrough}{{9}{11}{Solution walkthrough}{section.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {10}Testing}{12}{section.10}}
-\newlabel{testing}{{10}{12}{Testing}{section.10}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {11}Related solutions}{13}{section.11}}
-\newlabel{related_solutions}{{11}{13}{Related solutions}{section.11}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {12}Conclusions}{14}{section.12}}
-\newlabel{conclusions}{{12}{14}{Conclusions}{section.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces A simple neural network with one hidden layer (a layer between inputs and outputs).}}{6}{figure.7}}
+\newlabel{fig:no_activation_net}{{7}{6}{A simple neural network with one hidden layer (a layer between inputs and outputs)}{figure.7}{}}
+\newlabel{eq:y_hat_1}{{1}{6}{Introduction to Neural Networks}{equation.4.1}{}}
+\newlabel{eq:y_hat_2}{{2}{6}{Introduction to Neural Networks}{equation.4.2}{}}
+\newlabel{eq:in_1}{{3}{6}{Introduction to Neural Networks}{equation.4.3}{}}
+\newlabel{eq:in_2}{{4}{6}{Introduction to Neural Networks}{equation.4.4}{}}
+\newlabel{eq:in_3}{{5}{6}{Introduction to Neural Networks}{equation.4.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Exemplary classifier input, output and desired (one-hot encoded) output with legend.}}{7}{figure.8}}
+\newlabel{fig:probability_vectors}{{8}{7}{Exemplary classifier input, output and desired (one-hot encoded) output with legend}{figure.8}{}}
+\newlabel{eq:cross_entropy}{{6}{7}{Introduction to Neural Networks}{equation.4.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Updated model of simple neural network from \autoref  {fig:no_activation_net}. $g$ is a sigmoid activation function. Outputs are often normalized using softmax.}}{8}{figure.9}}
+\newlabel{fig:activation_net}{{9}{8}{Updated model of simple neural network from \autoref {fig:no_activation_net}. $g$ is a sigmoid activation function. Outputs are often normalized using softmax}{figure.9}{}}
+\newlabel{eq:sigmoid}{{7}{8}{Introduction to Neural Networks}{equation.4.7}{}}
+\newlabel{eq:softmax}{{8}{8}{Introduction to Neural Networks}{equation.4.8}{}}
+\newlabel{eq:update_rule}{{9}{8}{Introduction to Neural Networks}{equation.4.9}{}}
+\citation{chain_rule_def}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces A simple neural network, with sigmoid activation function $g$ (Eq. \ref  {eq:sigmoid}), i. e. $a_1^{(2)}=g(w_{11}^{(1)}x_1)$.}}{9}{figure.10}}
+\newlabel{fig:simple_net}{{10}{9}{A simple neural network, with sigmoid activation function $g$ (Eq. \ref {eq:sigmoid}), i. e. $a_1^{(2)}=g(w_{11}^{(1)}x_1)$}{figure.10}{}}
+\newlabel{eq:inference}{{10}{9}{Introduction to Neural Networks}{equation.4.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Outline of a single step of backpropagation with chain rule, where $E=-y_1log(\mathaccentV {hat}05E{y_1})$. Value $y_1$ is a desired binary output from training set.}}{9}{figure.11}}
+\newlabel{fig:backprop}{{11}{9}{Outline of a single step of backpropagation with chain rule, where $E=-y_1log(\hat {y_1})$. Value $y_1$ is a desired binary output from training set}{figure.11}{}}
+\newlabel{eq:gradient_1}{{11}{9}{Introduction to Neural Networks}{equation.4.11}{}}
+\newlabel{eq:gradient_2}{{12}{9}{Introduction to Neural Networks}{equation.4.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Introduction to Convolutional Neural Networks}{11}{section.5}}
+\newlabel{introduction_to_cnns}{{5}{11}{Introduction to Convolutional Neural Networks}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Comparison of world-class CNN architectures}{12}{section.6}}
+\newlabel{comparison_ccn_archs}{{6}{12}{Comparison of world-class CNN architectures}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Transfer learning}{13}{section.7}}
+\newlabel{transfer_learning}{{7}{13}{Transfer learning}{section.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Data augmentation}{14}{section.8}}
+\newlabel{data_augmentation}{{8}{14}{Data augmentation}{section.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Solution walkthrough}{15}{section.9}}
+\newlabel{solution_walkthrough}{{9}{15}{Solution walkthrough}{section.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Testing}{16}{section.10}}
+\newlabel{testing}{{10}{16}{Testing}{section.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Related solutions}{17}{section.11}}
+\newlabel{related_solutions}{{11}{17}{Related solutions}{section.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Conclusions}{18}{section.12}}
+\newlabel{conclusions}{{12}{18}{Conclusions}{section.12}{}}
 \bibdata{mybib}
 \bibcite{android_guide}{1}
 \bibcite{firebase_database_docs}{2}
 \bibcite{flask_docs}{3}
 \bibcite{survey}{4}
 \bibcite{cpu_vs_gpu}{5}
-\bibcite{cisco_era}{6}
-\bibcite{kpmg_alco}{7}
-\bibcite{ai_modern_approach}{8}
+\bibcite{chain_rule_def}{6}
+\bibcite{cisco_era}{7}
+\bibcite{kpmg_alco}{8}
+\bibcite{ai_modern_approach}{9}
 \bibstyle{siam}

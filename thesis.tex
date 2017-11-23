@@ -107,6 +107,134 @@ I want to conclude this chapter with important distinction between Machine Learn
 \clearpage
 
 \section{Introduction to Neural Networks} \label{introduction_to_nn}
+It's reasonable to think of a neural network (NN) as a mathematical function, which in practice tends to be very complicated because of three things:
+\begin{enumerate}[1)]
+\item it has a large number of coefficients (weights), often exceeding tens of millions
+\item it's a very deeply nested function, hence even simple gradient calculation (partial derivative) is relatively slower
+\item most of its computations are performed on multidimensional tensors
+\end{enumerate}
+\autoref{fig:no_activation_net} contains a popular representation of a simple neural network with three basic building blocks: unit (single circle with value $in_i^{(k)}$, input $x_i$, output $\hat{y_i}$ or bias $1$), layer (units arranged into one vertical group $k$) and weight (connection between units with value $w_{ij}^{(k)}$ representing its strength). Eq. \ref{eq:y_hat_1}, \ref{eq:y_hat_2}, \ref{eq:in_1}, \ref{eq:in_2} and \ref{eq:in_3} translate this graphical representation to mathematical formula.\\
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{no_activation_net}
+\centering
+\caption{A simple neural network with one hidden layer (a layer between inputs and outputs).}
+\label{fig:no_activation_net}
+\end{figure}
+
+\begin{equation} \label{eq:y_hat_1}
+\hat{y_1} = w_{11}^{(2)}in_1^{(2)} + w_{21}^{(2)}in_2^{(2)} + w_{31}^{(2)}in_3^{(2)} + w_{41}^{(2)} * 1 
+\end{equation}
+
+\begin{equation} \label{eq:y_hat_2}
+\hat{y_2} = w_{12}^{(2)}in_1^{(2)} + w_{22}^{(2)}in_2^{(2)} + w_{32}^{(2)}in_3^{(2)} + w_{42}^{(2)} * 1 
+\end{equation}
+
+\begin{equation} \label{eq:in_1}
+in_1^{(2)} = w_{11}^{(1)}x_1 + w_{21}^{(1)}x_2 + w_{31}^{(1)} * 1 
+\end{equation}
+
+\begin{equation} \label{eq:in_2}
+in_2^{(2)} = w_{12}^{(1)}x_1 + w_{22}^{(1)}x_2 + w_{32}^{(1)} * 1 
+\end{equation}
+
+\begin{equation} \label{eq:in_3}
+in_3^{(2)} = w_{13}^{(1)}x_1 + w_{23}^{(1)}x_2 + w_{33}^{(1)} * 1 
+\end{equation}
+
+"Perceptron" is a common name for a neural network, where inputs are immediately coupled with outputs (no hidden layers, unlike in \autoref{fig:no_activation_net}). The presence of hidden (middle) layer of units, which prevents from direct connections between inputs and outputs, allows neural network to model highly nonlinear mathematical functions. Norvig and Russell justify that, using XOR gate as an example, in a following manner: "[...] linear classifiers [...] can represent linear decision boundaries in the input space. This works fine for the carry function, which is a logical AND [...]. The sum function, however, is an XOR (exclusive OR) of the two inputs. [...] this function is not linearly separable so the perceptron cannot learn it. The linearly separable functions constitute just a small fraction of all Boolean functions." \cite{ai_modern_approach}\\
+
+Before delving into learning process of NNs, it's important to make two additions to previous model:
+\begin{enumerate}[1)]
+\item error function (also called cost function)
+\item activation function
+\end{enumerate}
+Ad 1. The most reliable way for the algorithm to represent predictions is through a vector of probabilities. Consider an example of beer name predictions based on image of label. \autoref{fig:probability_vectors} shows a probability output of a classifier (notice that all values sum to 1), compared with an output, that it should strive for. A cost function I want to introduce in this section, called categorical cross entropy (Eq. \ref{eq:cross_entropy}), simply measures the correlation between those two probability distributions (predicted and ideal). Notice that multiplication by one-hot encoded examples, forces the function to only compare non-zero elements of ideal distribution, with respective values of classifier output further from 1 being penalized more than values close to 1 (thanks to the nature of logarithm).\\ 
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{probability_vectors}
+\centering
+\caption{Exemplary classifier input, output and desired (one-hot encoded) output with legend.}
+\label{fig:probability_vectors}
+\end{figure}
+
+\begin{equation} \label{eq:cross_entropy}
+H(d, p) = -\sum_i d_i * log(p_i)
+\end{equation}
+where:
+\begin{itemize}
+\item[$d_i$] is the $i^{th}$ element of one-hot encoded (desired) probability vector $d$,
+\item[$p_i$] is the $i^{th}$ element of probability vector $p$ predicted by the classifier.
+\end{itemize}
+
+Ad 2. Unit's value $in_i^{(k)}$ is rarely propagated explicitly to next layers. So called activation function is used instead. The one I'll be introducing in this section is called sigmoid (Eq. \ref{eq:sigmoid}). The updated model of simple neural network from \autoref{fig:no_activation_net} is shown in \autoref{fig:activation_net}. One thing worth pointing out is a difference between sigmoid and softmax function (Eq. \ref{eq:softmax}) - both used in artificial neural networks. Whereas sigmoid inputs a single value and outputs a normalized scalar, softmax inputs a list of values and outputs a vector of real numbers in range [0, 1] that add up to 1, thus can be interpreted as a probability distribution. Sigmoid is used in hidden units, while softmax is usually applied in the last output layer. Both functions can be categorized as logistic functions.\\
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{activation_net}
+\centering
+\caption{Updated model of simple neural network from \autoref{fig:no_activation_net}. $g$ is a sigmoid activation function. Outputs are often normalized using softmax.}
+\label{fig:activation_net}
+\end{figure}
+
+\begin{equation} \label{eq:sigmoid}
+g(x) = \frac{1}{1 + e^{-x}}
+\end{equation}
+
+\begin{equation} \label{eq:softmax}
+s(z)_j = \frac{e^{z_j}}{\sum_{k=1}^Ke^{z_k}}
+\end{equation}
+Softmax function $s(z)_j$ “squashes” a $K$-dimensional vector $z$ to $K$-dimensional probability distribution, where $j=1, ..., K$.\\
+
+The goal of neural network's learning process is to find correct weights, i. e. weights, that will result in a mathematical model, where the difference of inputs is clearly represented in the difference of output vectors, which are subjects to analysis and prediction. For example in a trained dog breed classifier, the output vector for an image of german shepherd is clearly different than for york's. This can be easily interpreted and lead to correct human-readable prediction of a breed. Currently, the best known way to train a network is via algorithm called backpropagation. Main idea of this method is to calculate gradients of a cost function E (e. g. categorical cross entropy) with respect to each of weights, which are later updated by some portion of these gradients as illustrated in Eq. \ref{eq:update_rule}.
+
+\begin{equation} \label{eq:update_rule}
+w_{ij}^{'(k)} \leftarrow w_{ij}^{(k)} - \alpha\frac{\partial E}{\partial w_{ij}^{(k)}}
+\end{equation}
+where:
+\begin{itemize}
+\item[$\alpha$] is a learning rate (indicating what portion of gradient should be used).
+\end{itemize}
+
+Let us consider a neural network in \autoref{fig:simple_net} with three units, one hidden layer and sigmoid activation function. Before conducting backpropagation, I performed, so called, forward pass, which is simply a mathematical inference of outputs, given inputs (Eq. \ref{eq:inference}).\\
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{simple_net}
+\centering
+\caption{A simple neural network, with sigmoid activation function $g$ (Eq. \ref{eq:sigmoid}), i. e. $a_1^{(2)}=g(w_{11}^{(1)}x_1)$.}
+\label{fig:simple_net}
+\end{figure}
+
+\begin{equation} \label{eq:inference}
+\hat{y_1} = \frac{w_{11}^{(2)}}{1 + e^{-w_{11}^{(1)}x_1}}
+\end{equation}
+
+As mentioned previously, NN's learning algorithm is based on calculating partial derivatives with respect to each of weights. A deep nesting of functions, representing more complicated networks, encourages to make use of chain rule \cite{chain_rule_def}. \autoref{fig:backprop} outlines a single step of backpropagation using categorical cross entropy error function $E$. Eq. \ref{eq:gradient_1} and \ref{eq:gradient_2} present symbolic gradient calculations, necessary for learning process to occur. At this point, a beautifully simple derivative of sigmoid function is worth recalling:
+\[ s'(x) = \frac{\partial}{\partial x}\frac{1}{1 + e^{-x}}\]
+\[s'(x) = \frac{e^{-x}}{(1 + e^{-x})^2} \]
+\[s'(x) = \frac{1}{1 + e^{-x}} * \frac{e^{-x}}{1 + e^{-x}}\]
+\[ s'(x) = s(x)(1 - s(x))\]
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{backprop}
+\centering
+\caption{Outline of a single step of backpropagation with chain rule, where $E=-y_1log(\hat{y_1})$. Value $y_1$ is a desired binary output from training set.}
+\label{fig:backprop}
+\end{figure}
+
+\begin{equation} \label{eq:gradient_1}
+\frac{\partial E}{\partial w_{11}^{(2)}} = - \frac{y_1}{ln(10) * \hat{y_1}(1 + e^{-w_{11}^{(1)}x_1})}
+\end{equation}
+
+\begin{equation} \label{eq:gradient_2}
+\frac{\partial E}{\partial w_{11}^{(1)}} = - \frac{w_{11}^{(2)}y_1x_1e^{-w_{11}^{(1)}x_1}}{ln(10) * \hat{y_1}[(1 + e^{-w_{11}^{(1)}x_1})^2]}
+\end{equation}
+
+With symbolic computations behind, consider following inputs to neural network from \autoref{fig:backprop}:
+\begin{enumerate}[1)]
+\item $x_1=10, y_1=1$ - a training example. NN should strive for returning 1, via variable $y_1$, whenever the input is equal to 10.
+\item $w_{11}^{(1)}=0.3, w_{11}^{(2)}=0.5$ - randomly initialized weights for first forward pass (Eq. \ref{eq:inference}).
+\end{enumerate}
+Primary step of learning process is performing inference, given randomly initialized weights and input. The produced outcome is $\hat{y_1} \approx 0.48$, which is quite far from desired 1 ($y_1$). Backward pass allows to calculate gradients with respect to each weight, namely $\frac{\partial E}{\partial w_{11}^{(2)}} \approx 0.86,  \frac{\partial E}{\partial w_{11}^{(1)}} \approx 0.2$. After applying update rule from Eq. \ref{eq:update_rule}, with learning rate $\alpha=0.5$, new weights are $w_{11}^{(1)} \approx 0.4, w_{11}^{(2)} \approx 0.93$ and produce outcome $\hat{y_1} \approx 0.91$(much closer to desired 1). Presented algorithm is iterative. With increased amount of repetitions of above step and larger amount of examples, it should converge to optimal weights (globally or locally).
 \clearpage
 
 \section{Introduction to Convolutional Neural Networks} \label{introduction_to_cnns}

@@ -2,11 +2,11 @@
 \contentsline {section}{\numberline {2}Solution overview}{2}{section.2}
 \contentsline {section}{\numberline {3}Introduction to Artificial Intelligence}{4}{section.3}
 \contentsline {section}{\numberline {4}Introduction to Neural Networks}{6}{section.4}
-\contentsline {section}{\numberline {5}Introduction to Convolutional Neural Networks}{7}{section.5}
-\contentsline {section}{\numberline {6}Comparison of world-class CNN architectures}{8}{section.6}
-\contentsline {section}{\numberline {7}Transfer learning}{9}{section.7}
-\contentsline {section}{\numberline {8}Data augmentation}{10}{section.8}
-\contentsline {section}{\numberline {9}Solution walkthrough}{11}{section.9}
-\contentsline {section}{\numberline {10}Testing}{12}{section.10}
-\contentsline {section}{\numberline {11}Related solutions}{13}{section.11}
-\contentsline {section}{\numberline {12}Conclusions}{14}{section.12}
+\contentsline {section}{\numberline {5}Introduction to Convolutional Neural Networks}{11}{section.5}
+\contentsline {section}{\numberline {6}Comparison of world-class CNN architectures}{12}{section.6}
+\contentsline {section}{\numberline {7}Transfer learning}{13}{section.7}
+\contentsline {section}{\numberline {8}Data augmentation}{14}{section.8}
+\contentsline {section}{\numberline {9}Solution walkthrough}{15}{section.9}
+\contentsline {section}{\numberline {10}Testing}{16}{section.10}
+\contentsline {section}{\numberline {11}Related solutions}{17}{section.11}
+\contentsline {section}{\numberline {12}Conclusions}{18}{section.12}
