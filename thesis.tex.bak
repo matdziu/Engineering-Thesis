@@ -320,7 +320,7 @@ Convolutional neural networks, described in the previous chapter, take significa
 \item Operations - number of operations required for inference of a single image. Linearly related to the time of a single image classification process.
 \item Parameters - illustrated by circle size. The amount of neural network’s parameters i. e. the size of NN or a measure of how complicated a model is.
 \end{enumerate}
-Furthermore, authors of the comparison used standardization not only by task and training set, but also by hardware used: "All experiments were conducted on a JetPack-2.3 NVIDIA Jetson TX1 board (nVIDIA): an embedded visual computing system with a 64-bit ARM® A57 CPU, a 1 T-Flop/s 256-core NVIDIA Maxwell GPU and 4 GB LPDDR4 of shared RAM." \cite{canziani_analysis}.
+Furthermore, authors of the comparison used standardization not only by task and training set, but also by hardware used: "All experiments were conducted on a JetPack-2.3 NVIDIA Jetson TX1 board (nVIDIA): an embedded visual computing system with a 64-bit ARM A57 CPU, a 1 T-Flop/s 256-core NVIDIA Maxwell GPU and 4 GB LPDDR4 of shared RAM." \cite{canziani_analysis}.
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{world_cnns}
@@ -448,6 +448,74 @@ This part is a CNN responsible for beer label recognition on Flask server. To cr
 \clearpage
 
 \section{Testing} \label{testing}
+Purpose of this chapter is to provide reader with metrics related to the convolutional neural network used in the prototype, which is the base of this thesis. Those metrics will be later utilized for system evaluation. All experiments were conducted on 3.1 GHz Intel Core i5 CPU with 16 GB 2133 MHz LPDDR3 RAM.
+
+\autoref{fig:collected_labels} presents manually collected data set for one class. Augmentation, applied on this beer label, resulted in 150 additional pictures per image, i. e. 302 images total for Harnas beer, and took on average 256.91 seconds to complete. Similar procedure was employed for remaining 9 beer labels. \autoref{fig:augm_subset} contains a small portion of augmented training set. Picture transformations used:
+\begin{enumerate}[a)]
+\item changing brightness - for every piece of data (using HSV color model)
+\item adding Gaussian noise - 20\% probability of happening
+\item Gaussian blurring - 20\% probability of happening
+\item rotation - for every piece of data (max angle value: 90 deg)
+\item translation - for every piece of data (in both directions)
+\item shearing - 25\% probability of happening
+\end{enumerate}
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{collected_labels}
+\centering
+\caption{Manually collected data set for Harnas beer label class. The first picture (2160 x 3840 pixels resolution) was taken by camera and the second one (ideal) was found on the internet.}
+\label{fig:collected_labels}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.6\textwidth]{augm_subset}
+\centering
+\caption{Small portion of augmented training set for Harnas beer label class.}
+\label{fig:augm_subset}
+\end{figure}
+
+Bottleneck features were extracted, using Inception-V3 neural network, for 3020 training images of all beer labels, that the prototype is capable of recognizing. At the same time, each picture underwent a dimension reduction to 150 x 150 pixels resolution and value rescaling to real range [0, 1]. This procedure took 428.19 seconds for entire data set.\\
+
+Categorical cross entropy error function was used during training. Number of epochs (learning iterations) was set to 50, while weights were being updated after backward pass on batches of size 48. To validate accuracy a validation set of beer labels images was created, independently from the training one, and fed to obtained ConvNet (over 100 validation pictures). \autoref{fig:10_class_acc} and \ref{fig:10_class_err} contain charts of training progression, which in the end took 767.3 seconds for 10 classes and resulted in learning a total of 9571594 parameters.
+
+\begin{figure}[h]
+\includegraphics[width=0.6\textwidth]{10_class_acc}
+\centering
+\caption{Accuracy of 10-class model during training. The best obtained value is 99.5\% for training set and 89.1\% for validation set.}
+\label{fig:10_class_acc}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.6\textwidth]{10_class_err}
+\centering
+\caption{Categorical cross entropy error during training of 10-class CNN. The best obtained value is 0.051 for training set and 1.796 for validation set.}
+\label{fig:10_class_err}
+\end{figure}
+
+Average time of a single beer label recognition, out of 10 classes, is 0.1 second. Implemented CNN was tested in different lighting conditions and with or without visible background in input image. \autoref{fig:test_table} accumulates outcomes of these tests.
+
+\begin{figure}[h]
+\includegraphics[width=0.4\textwidth]{test_table}
+\centering
+\caption{Test results for 10-class CNN (different lighting conditions and background visibility of input image)}.
+\label{fig:test_table}
+\end{figure}
+
+Test for algorithm's scalability involved incorporating additional 10 classes (10 different beer labels) and retraining. Average time of a single beer label recognition, this time out of 20 classes, is 0.098 second. \autoref{fig:20_class_acc} and \ref{fig:20_class_err} contain charts of training progression, which in the end took 1253.84 seconds and resulted in learning a total of 9574164 parameters.
+
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{20_class_acc}
+\centering
+\caption{Accuracy of 20-class model during training. The best obtained value is 99.8\% for training set and 87.6\% for validation set.}
+\label{fig:20_class_acc}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{20_class_err}
+\centering
+\caption{Categorical cross entropy error during training of 20-class CNN. The best obtained value is 0.017 for training set and 1.16 for validation set.}
+\label{fig:20_class_err}
+\end{figure}
 \clearpage
 
 \section{Related solutions} \label{related_solutions}

@@ -8,5 +8,5 @@
 \contentsline {section}{\numberline {8}Data augmentation}{18}{section.8}
 \contentsline {section}{\numberline {9}Solution walkthrough}{19}{section.9}
 \contentsline {section}{\numberline {10}Testing}{22}{section.10}
-\contentsline {section}{\numberline {11}Related solutions}{23}{section.11}
-\contentsline {section}{\numberline {12}Conclusions}{24}{section.12}
+\contentsline {section}{\numberline {11}Related solutions}{26}{section.11}
+\contentsline {section}{\numberline {12}Conclusions}{27}{section.12}
