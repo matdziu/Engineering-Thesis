@@ -113,7 +113,7 @@ It's reasonable to think of a neural network (NN) as a mathematical function, wh
 \item it's a very deeply nested function, hence even simple gradient calculation (partial derivative) is relatively slower
 \item most of its computations are performed on multidimensional tensors
 \end{enumerate}
-\autoref{fig:no_activation_net} contains a popular representation of a simple neural network with three basic building blocks: unit (single circle with value $in_i^{(k)}$, input $x_i$, output $\hat{y_i}$ or bias $1$), layer (units arranged into one vertical group $k$) and weight (connection between units with value $w_{ij}^{(k)}$ representing its strength). Eq. \ref{eq:y_hat_1}, \ref{eq:y_hat_2}, \ref{eq:in_1}, \ref{eq:in_2} and \ref{eq:in_3} translate this graphical representation to mathematical formula.\\
+\autoref{fig:no_activation_net} contains a popular representation of a simple neural network with three basic building blocks: unit (single circle with value $in_i^{(k)}$, input $x_i$, output $\hat{y_i}$ or bias $1$), layer (units arranged into one vertical group $k$) and weight (connection between units with value $w_{ij}^{(k)}$ representing its strength). \autoref{eq:y_hat_1}, \ref{eq:y_hat_2}, \ref{eq:in_1}, \ref{eq:in_2} and \ref{eq:in_3} translate this graphical representation to mathematical formula.\\
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{no_activation_net}
@@ -149,7 +149,7 @@ Before delving into learning process of NNs, it's important to make two addition
 \item error function (also called cost function)
 \item activation function
 \end{enumerate}
-Ad 1. The most reliable way for the algorithm to represent predictions is through a vector of probabilities. Consider an example of beer name predictions based on image of label. \autoref{fig:probability_vectors} shows a probability output of a classifier (notice that all values sum to 1), compared with an output, that it should strive for. A cost function I want to introduce in this section, called categorical cross entropy (Eq. \ref{eq:cross_entropy}), simply measures the correlation between those two probability distributions (predicted and ideal). Notice that multiplication by one-hot encoded examples, forces the function to only compare non-zero elements of ideal distribution, with respective values of classifier output further from 1 being penalized more than values close to 1 (thanks to the nature of logarithm).\\ 
+Ad 1. The most reliable way for the algorithm to represent predictions is through a vector of probabilities. Consider an example of beer name predictions based on image of label. \autoref{fig:probability_vectors} shows a probability output of a classifier (notice that all values sum to 1), compared with an output, that it should strive for. A cost function I want to introduce in this section, called categorical cross entropy (\autoref{eq:cross_entropy}), simply measures the correlation between those two probability distributions (predicted and ideal). Notice that multiplication by one-hot encoded examples, forces the function to only compare non-zero elements of ideal distribution, with respective values of classifier output further from 1 being penalized more than values close to 1 (thanks to the nature of logarithm).\\ 
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{probability_vectors}
@@ -167,7 +167,7 @@ where:
 \item[$p_i$] is the $i^{th}$ element of probability vector $p$ predicted by the classifier.
 \end{itemize}
 
-Ad 2. Unit's value $in_i^{(k)}$ is rarely propagated explicitly to next layers. So called activation function is used instead. The one I'll be introducing in this section is called sigmoid (Eq. \ref{eq:sigmoid}). The updated model of simple neural network from \autoref{fig:no_activation_net} is shown in \autoref{fig:activation_net}. One thing worth pointing out is a difference between sigmoid and softmax function (Eq. \ref{eq:softmax}) - both used in artificial neural networks. Whereas sigmoid inputs a single value and outputs a normalized scalar, softmax inputs a list of values and outputs a vector of real numbers in range [0, 1] that add up to 1, thus can be interpreted as a probability distribution. Sigmoid is used in hidden units, while softmax is usually applied in the last output layer. Both functions can be categorized as logistic functions.\\
+Ad 2. Unit's value $in_i^{(k)}$ is rarely propagated explicitly to next layers. So called activation function is used instead. The one I'll be introducing in this section is called sigmoid (\autoref{eq:sigmoid}). The updated model of simple neural network from \autoref{fig:no_activation_net} is shown in \autoref{fig:activation_net}. One thing worth pointing out is a difference between sigmoid and softmax function (\autoref{eq:softmax}) - both used in artificial neural networks. Whereas sigmoid inputs a single value and outputs a normalized scalar, softmax inputs a list of values and outputs a vector of real numbers in range [0, 1] that add up to 1, thus can be interpreted as a probability distribution. Sigmoid is used in hidden units, while softmax is usually applied in the last output layer. Both functions can be categorized as logistic functions.\\
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{activation_net}
@@ -185,7 +185,7 @@ s(z)_j = \frac{e^{z_j}}{\sum_{k=1}^Ke^{z_k}}
 \end{equation}
 Softmax function $s(z)_j$ “squashes” a $K$-dimensional vector $z$ to $K$-dimensional probability distribution, where $j=1, ..., K$.\\
 
-The goal of neural network's learning process is to find correct weights, i. e. weights, that will result in a mathematical model, where the difference of inputs is clearly represented in the difference of output vectors, which are subjects to analysis and prediction. For example in a trained dog breed classifier, the output vector for an image of german shepherd is clearly different than for york's. This can be easily interpreted and lead to correct human-readable prediction of a breed. Currently, the best known way to train a network is via algorithm called backpropagation. Main idea of this method is to calculate gradients of a cost function E (e. g. categorical cross entropy) with respect to each of weights, which are later updated by some portion of these gradients as illustrated in Eq. \ref{eq:update_rule}.
+The goal of neural network's learning process is to find correct weights, i. e. weights, that will result in a mathematical model, where the difference of inputs is clearly represented in the difference of output vectors, which are subjects to analysis and prediction. For example in a trained dog breed classifier, the output vector for an image of german shepherd is clearly different than for york's. This can be easily interpreted and lead to correct human-readable prediction of a breed. Currently, the best known way to train a network is via algorithm called backpropagation. Main idea of this method is to calculate gradients of a cost function E (e. g. categorical cross entropy) with respect to each of weights, which are later updated by some portion of these gradients as illustrated in \autoref{eq:update_rule}.
 
 \begin{equation} \label{eq:update_rule}
 w_{ij}^{'(k)} \leftarrow w_{ij}^{(k)} - \alpha\frac{\partial E}{\partial w_{ij}^{(k)}}
@@ -195,12 +195,12 @@ where:
 \item[$\alpha$] is a learning rate (indicating what portion of gradient should be used).
 \end{itemize}
 
-Let us consider a neural network in \autoref{fig:simple_net} with three units, one hidden layer and sigmoid activation function. Before conducting backpropagation, I performed, so called, forward pass, which is simply a mathematical inference of outputs, given inputs (Eq. \ref{eq:inference}).\\
+Let us consider a neural network in \autoref{fig:simple_net} with three units, one hidden layer and sigmoid activation function. Before conducting backpropagation, I performed, so called, forward pass, which is simply a mathematical inference of outputs, given inputs (\autoref{eq:inference}).\\
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{simple_net}
 \centering
-\caption{A simple neural network, with sigmoid activation function $g$ (Eq. \ref{eq:sigmoid}), i. e. $a_1^{(2)}=g(w_{11}^{(1)}x_1)$.}
+\caption{A simple neural network, with sigmoid activation function $g$ (\autoref{eq:sigmoid}), i. e. $a_1^{(2)}=g(w_{11}^{(1)}x_1)$.}
 \label{fig:simple_net}
 \end{figure}
 
@@ -208,7 +208,7 @@ Let us consider a neural network in \autoref{fig:simple_net} with three units, o
 \hat{y_1} = \frac{w_{11}^{(2)}}{1 + e^{-w_{11}^{(1)}x_1}}
 \end{equation}
 
-As mentioned previously, NN's learning algorithm is based on calculating partial derivatives with respect to each of weights. A deep nesting of functions, representing more complicated networks, encourages to make use of chain rule \cite{chain_rule_def}. \autoref{fig:backprop} outlines a single step of backpropagation using categorical cross entropy error function $E$. Eq. \ref{eq:gradient_1} and \ref{eq:gradient_2} present symbolic gradient calculations, necessary for learning process to occur. At this point, a beautifully simple derivative of sigmoid function is worth recalling:
+As mentioned previously, NN's learning algorithm is based on calculating partial derivatives with respect to each of weights. A deep nesting of functions, representing more complicated networks, encourages to make use of chain rule \cite{chain_rule_def}. \autoref{fig:backprop} outlines a single step of backpropagation using categorical cross entropy error function $E$. \autoref{eq:gradient_1} and \autoref{eq:gradient_2} present symbolic gradient calculations, necessary for learning process to occur. At this point, a beautifully simple derivative of sigmoid function is worth recalling:
 \[ s'(x) = \frac{\partial}{\partial x}\frac{1}{1 + e^{-x}}\]
 \[s'(x) = \frac{e^{-x}}{(1 + e^{-x})^2} \]
 \[s'(x) = \frac{1}{1 + e^{-x}} * \frac{e^{-x}}{1 + e^{-x}}\]
@@ -232,12 +232,86 @@ As mentioned previously, NN's learning algorithm is based on calculating partial
 With symbolic computations behind, consider following inputs to neural network from \autoref{fig:backprop}:
 \begin{enumerate}[1)]
 \item $x_1=10, y_1=1$ - a training example. NN should strive for returning 1, via variable $y_1$, whenever the input is equal to 10.
-\item $w_{11}^{(1)}=0.3, w_{11}^{(2)}=0.5$ - randomly initialized weights for first forward pass (Eq. \ref{eq:inference}).
+\item $w_{11}^{(1)}=0.3, w_{11}^{(2)}=0.5$ - randomly initialized weights for first forward pass (\autoref{eq:inference}).
 \end{enumerate}
-Primary step of learning process is performing inference, given randomly initialized weights and input. The produced outcome is $\hat{y_1} \approx 0.48$, which is quite far from desired 1 ($y_1$). Backward pass allows to calculate gradients with respect to each weight, namely $\frac{\partial E}{\partial w_{11}^{(2)}} \approx 0.86,  \frac{\partial E}{\partial w_{11}^{(1)}} \approx 0.2$. After applying update rule from Eq. \ref{eq:update_rule}, with learning rate $\alpha=0.5$, new weights are $w_{11}^{(1)} \approx 0.4, w_{11}^{(2)} \approx 0.93$ and produce outcome $\hat{y_1} \approx 0.91$(much closer to desired 1). Presented algorithm is iterative. With increased amount of repetitions of above step and larger amount of examples, it should converge to optimal weights (globally or locally).
+Primary step of learning process is performing inference, given randomly initialized weights and input. The produced outcome is $\hat{y_1} \approx 0.48$, which is quite far from desired 1 ($y_1$). Backward pass allows to calculate gradients with respect to each weight, namely $\frac{\partial E}{\partial w_{11}^{(2)}} \approx -0.86,  \frac{\partial E}{\partial w_{11}^{(1)}} \approx -0.2$. After applying update rule from \autoref{eq:update_rule}, with learning rate $\alpha=0.5$, new weights are $w_{11}^{(1)} \approx 0.4, w_{11}^{(2)} \approx 0.93$ and produce outcome $\hat{y_1} \approx 0.91$(much closer to desired 1). Presented algorithm is iterative. With increased amount of repetitions of above step and larger amount of examples, it should converge to optimal weights (globally or locally).
 \clearpage
 
 \section{Introduction to Convolutional Neural Networks} \label{introduction_to_cnns}
+In \autoref{fig:input} a reader can see a common representation of a grayscale image, depicting number 7 in low resolution (4x4). Supplying these pixel values as a vector input of size 16 to a regular neural net, detecting if number 7 is present in a picture or not (\autoref{fig:regular_net_image}), could yield a desired result, but with a huge cost. All inputs must be mapped to each hidden neuron, hence the amount of weights will grow drastically for even slightly higher image resolution. Additional pitfall is a complete loss of spatial connections between pixels, which are essential during object recognition. The solution involves introduction of local connectivity. Consider breaking a picture from \autoref{fig:input} into four regions as in \autoref{fig:segmented_input}. Then, each hidden node could be coupled with only the pixels from one of these regions as \autoref{fig:cnn_column} and \autoref{fig:cnn_spacial} show. This simple idea is utilized in convolutional neural networks (CNNs/ConvNets) and will assist during further comprehension of this chapter.
+
+\begin{figure}[h]
+\includegraphics[width=0.3\textwidth]{input}
+\centering
+\caption{Grayscale image of number 7 (4 x 4 pixels resolution).}
+\label{fig:input}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{regular_net_image}
+\centering
+\caption{Regular neural network recognizing number 7 in image input from \autoref{fig:input}, which is deconstructed (flattened) into vector of size 16.}
+\label{fig:regular_net_image}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.3\textwidth]{segmented_input}
+\centering
+\caption{A number from \autoref{fig:input} divided into four pixel regions.}
+\label{fig:segmented_input}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{cnn_column}
+\centering
+\caption{Local connectivity of inputs from \autoref{fig:segmented_input} to hidden nodes (vector form).}
+\label{fig:cnn_column}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{cnn_spacial}
+\centering
+\caption{Local connectivity of inputs from \autoref{fig:segmented_input} to hidden nodes (matrix form).}
+\label{fig:cnn_spacial}
+\end{figure}
+
+The standard reference for ConvNets is \textit{"Object Recognition with Gradient-Based Learning"} by LeCun et al. (1999) \cite{lecun_object}. This section attempts to explain basic building blocks of the system designed in that paper, called LeNet-5 \autoref{fig:lecun_net}. Since I've already mentioned about fully connected layers (standard NN layers) in the previous chapter and about flattening a matrix in \autoref{fig:regular_net_image}, I will focus on:
+\begin{enumerate}[1)]
+\item convolutional layer
+\item subsampling layer
+\end{enumerate}
+
+\begin{figure}[h]
+\includegraphics[width=0.8\textwidth]{lecun_net}
+\centering
+\caption{LeNet-5 CNN \cite{lecun_object} used for handwritten digit recognition.}
+\label{fig:lecun_net}
+\end{figure}
+
+Ad 1. Filter (also called convolution window) is a tool for obtaining convolutional layer. In essence, it's a matrix with coefficients (weights), which slides, with a certain stride, over previous layer (in \autoref{fig:convolution} the previous layer is an input layer) and performs a dot product. The outcome of this operation is saved into a new matrix, called a feature map. A collection of features maps (in case of \autoref{fig:convolution} a single feature map) is called a convolutional layer. 
+
+\begin{figure}[h]
+\includegraphics[width=0.8\textwidth]{convolution}
+\centering
+\caption{Consecutive steps of convolution using filter of size 2x2 with stride 2 (coefficients visible in red in the bottom right corner of a filter). The pink matrix is called a feature map and in this case represents a convolutional layer.}
+\label{fig:convolution}
+\end{figure}
+
+There are only a few major differences between simplified model above and the ones used in practice. Firstly, pixel values are non-binary, i. e. they are represented by an integer between 0 and 255, which is often normalized to fall into a real range [0, 1]. Secondly, recognition is often performed on RGB images (Red Green Blue \cite{rgb_def}). As a result of that, the size of the input is width x height x depth instead of width x height, where depth simply equals the number of color channels - 3. Convolutions are then performed simultaneously across each color matrix. Thirdly, \autoref{fig:convolution} presents only a single, atomic step constituting inference in CNNs. In next phase, the output of previous convolution (a collection of feature maps) is undergone the same process, but with a use of a different filter. And lastly, filters are often stacked together (multiple convolution windows are used at the same time). Only then, succeeding convolutional layer can possess multiple feature maps. As with regular neural networks, the goal of the learning process, using backpropagation, is to find correct weights (filter coefficients).\\\\
+Ad 2. Subsampling layers serve two purposes: reducing network dimensionality and helping it to generalize. One of the most popular subsampling techniques used today is max pooling. A window slides across a matrix with a certain stride (in a way similar to filter), takes element with the highest value and saves it to a reduced tensor (\autoref{fig:max_pooling}).
+
+\begin{figure}[h]
+\includegraphics[width=0.8\textwidth]{max_pooling}
+\centering
+\caption{Consecutive steps of max pooling with window of size 2x2 and stride 2. Green matrix is a reduced tensor.}
+\label{fig:max_pooling}
+\end{figure}
+
+Last thing worth mentioning is that, similarly to normal neural networks, CNNs rarely propagate activations (values of elements in features maps) explicitly to next layers. Rectifier function, also called ReLU (\autoref{eq:relu}), is often used instead.
+
+\begin{equation} \label{eq:relu}
+f(x) = max(0, x)
+\end{equation}
 \clearpage
 
 \section{Comparison of world-class CNN architectures} \label{comparison_ccn_archs}
