@@ -1,5 +1,38 @@
 \begin{thebibliography}{10}
 
+\bibitem{hsv_def}
+{\em {HSV} color model definition}.
+\newblock \url{https://en.wikipedia.org/wiki/HSL_and_HSV}, access: November 18,
+  2017.
+
+\bibitem{kotlin_blogpost}
+{\em {"Kotlin on Android. Now Official"} blog post}.
+\newblock
+  \url{https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/},
+  access: November 18, 2017.
+
+\bibitem{nosql_def}
+{\em {NoSql} definition}.
+\newblock \url{https://en.wikipedia.org/wiki/NoSQL}, access: November 18, 2017.
+
+\bibitem{rest_def}
+{\em {REST} definition}.
+\newblock \url{https://en.wikipedia.org/wiki/Representational_state_transfer},
+  access: November 18, 2017.
+
+\bibitem{retrofit_repo}
+{\em Retrofit library repository}.
+\newblock \url{https://github.com/square/retrofit}, access: November 18, 2017.
+
+\bibitem{rxjava_repo}
+{\em {RxJava} library repository}.
+\newblock \url{https://github.com/ReactiveX/RxJava}, access: November 18, 2017.
+
+\bibitem{synset_def}
+{\em Synset definition}.
+\newblock \url{https://en.wikipedia.org/wiki/Synonym_ring}, access: November 4,
+  2017.
+
 \bibitem{android_guide}
 {\em Android framework guide}.
 \newblock \url{https://developer.android.com/guide/index.html}, access: October
@@ -34,6 +67,11 @@
 {\em {RGB} color model definition}.
 \newblock \url{https://en.wikipedia.org/wiki/RGB_color_model}, access: October
   29, 2017.
+
+\bibitem{canziani_analysis}
+{\sc A.~Canziani, A.~Paszke, and E.~Culurciello}, {\em An analysis of deep
+  neural network models for practical applications}, arXiv preprint
+  arXiv:1605.07678,  (2016).
 
 \bibitem{cisco_era}
 {\sc Cisco}, {\em {The Zettabyte Era: Trends and Analysis}}, 2017.

@@ -5,8 +5,8 @@
 \contentsline {section}{\numberline {5}Introduction to Convolutional Neural Networks}{11}{section.5}
 \contentsline {section}{\numberline {6}Comparison of world-class CNN architectures}{15}{section.6}
 \contentsline {section}{\numberline {7}Transfer learning}{16}{section.7}
-\contentsline {section}{\numberline {8}Data augmentation}{17}{section.8}
-\contentsline {section}{\numberline {9}Solution walkthrough}{18}{section.9}
-\contentsline {section}{\numberline {10}Testing}{19}{section.10}
-\contentsline {section}{\numberline {11}Related solutions}{20}{section.11}
-\contentsline {section}{\numberline {12}Conclusions}{21}{section.12}
+\contentsline {section}{\numberline {8}Data augmentation}{18}{section.8}
+\contentsline {section}{\numberline {9}Solution walkthrough}{19}{section.9}
+\contentsline {section}{\numberline {10}Testing}{22}{section.10}
+\contentsline {section}{\numberline {11}Related solutions}{23}{section.11}
+\contentsline {section}{\numberline {12}Conclusions}{24}{section.12}

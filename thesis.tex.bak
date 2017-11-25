@@ -288,7 +288,7 @@ The standard reference for ConvNets is \textit{"Object Recognition with Gradient
 \label{fig:lecun_net}
 \end{figure}
 
-Ad 1. Filter (also called convolution window) is a tool for obtaining convolutional layer. In essence, it's a matrix with coefficients (weights), which slides, with a certain stride, over previous layer (in \autoref{fig:convolution} the previous layer is an input layer) and performs a dot product. The outcome of this operation is saved into a new matrix, called a feature map. A collection of features maps (in case of \autoref{fig:convolution} a single feature map) is called a convolutional layer. 
+Ad 1. Filter (also called convolution window) is a tool for obtaining convolutional layer. In essence, it's a matrix with coefficients (weights), which slides, with a certain stride, over previous layer (in \autoref{fig:convolution} the previous layer is an input layer) and performs a dot product. The outcome of this operation is saved into a new matrix, called a feature map. A collection of features maps (in case of \autoref{fig:convolution} a single feature map) is called a convolutional layer. There are only a few major differences between simplified model above and the ones used in practice. Firstly, pixel values are non-binary, i. e. they are represented by an integer between 0 and 255, which is often normalized to fall into a real range [0, 1]. Secondly, recognition is often performed on RGB images (Red Green Blue \cite{rgb_def}). As a result of that, the size of the input is width x height x depth instead of width x height, where depth simply equals the number of color channels - 3. Convolutions are then performed simultaneously across each color matrix. Thirdly, \autoref{fig:convolution} presents only a single, atomic step constituting inference in CNNs. In next phase, the output of previous convolution (a collection of feature maps) is undergone the same process, but with a use of a different filter. And lastly, filters are often stacked together (multiple convolution windows are used at the same time). Only then, succeeding convolutional layer can possess multiple feature maps. As with regular neural networks, the goal of the learning process, using backpropagation, is to find correct weights (filter coefficients).\\\\
 
 \begin{figure}[h]
 \includegraphics[width=0.8\textwidth]{convolution}
@@ -297,7 +297,6 @@ Ad 1. Filter (also called convolution window) is a tool for obtaining convolutio
 \label{fig:convolution}
 \end{figure}
 
-There are only a few major differences between simplified model above and the ones used in practice. Firstly, pixel values are non-binary, i. e. they are represented by an integer between 0 and 255, which is often normalized to fall into a real range [0, 1]. Secondly, recognition is often performed on RGB images (Red Green Blue \cite{rgb_def}). As a result of that, the size of the input is width x height x depth instead of width x height, where depth simply equals the number of color channels - 3. Convolutions are then performed simultaneously across each color matrix. Thirdly, \autoref{fig:convolution} presents only a single, atomic step constituting inference in CNNs. In next phase, the output of previous convolution (a collection of feature maps) is undergone the same process, but with a use of a different filter. And lastly, filters are often stacked together (multiple convolution windows are used at the same time). Only then, succeeding convolutional layer can possess multiple feature maps. As with regular neural networks, the goal of the learning process, using backpropagation, is to find correct weights (filter coefficients).\\\\
 Ad 2. Subsampling layers serve two purposes: reducing network dimensionality and helping it to generalize. One of the most popular subsampling techniques used today is max pooling. A window slides across a matrix with a certain stride (in a way similar to filter), takes element with the highest value and saves it to a reduced tensor (\autoref{fig:max_pooling}).
 
 \begin{figure}[h]
@@ -315,15 +314,137 @@ f(x) = max(0, x)
 \clearpage
 
 \section{Comparison of world-class CNN architectures} \label{comparison_ccn_archs}
+Convolutional neural networks, described in the previous chapter, take significant amount of training data to achieve high level accuracy. It is not uncommon, for more complicated recognizing tasks, to require hundred thousands of labeled images. One of the websites, which hosts such data, is ImageNet. As of 4th November 2017, it contains 14197122 images with 21841 synsets (i. e. groups of synonyms helping with information retrieval \cite{synset_def}). However, the greatest merit of ImageNet is hosting ILSVRC competition, that gave rise to CNNs, which are now considered world-class. One of the tasks of the competition is to implement an algorithm capable of recognizing 1000 different objects and drawing bounding boxes around them, given 1.2 million training images. Canziani et al. \cite{canziani_analysis} noticed, that because of the competition's focus solely on accuracy, other metrics, important for practical applications, are neglected. In \autoref{fig:world_cnns} a reader can see a comparison of the most popular ILSVRC entries in the last years, which provides information about:
+\begin{enumerate}[1)]
+\item Top-1 accuracy - obtained by checking if the top class (the one with the highest probability in the output vector of ConvNet) is the same as target label.
+\item Operations - number of operations required for inference of a single image. Linearly related to the time of a single image classification process.
+\item Parameters - illustrated by circle size. The amount of neural network’s parameters i. e. the size of NN or a measure of how complicated a model is.
+\end{enumerate}
+Furthermore, authors of the comparison used standardization not only by task and training set, but also by hardware used: "All experiments were conducted on a JetPack-2.3 NVIDIA Jetson TX1 board (nVIDIA): an embedded visual computing system with a 64-bit ARM® A57 CPU, a 1 T-Flop/s 256-core NVIDIA Maxwell GPU and 4 GB LPDDR4 of shared RAM." \cite{canziani_analysis}.
+
+\begin{figure}[h]
+\includegraphics[width=0.5\textwidth]{world_cnns}
+\centering
+\caption{Comparison of world-class CNN architectures \cite{canziani_analysis} including: top-1 accuracy, number of operations and parameters.}
+\label{fig:world_cnns}
+\end{figure}
 \clearpage
 
 \section{Transfer learning} \label{transfer_learning}
+The state-of-the-art CNN architectures, mentioned previously, are result of extensive experimentation, hyperparameters tuning, many years of expertise and months of dedicated hard work. They were based on ImageNet database and often took weeks to train. How then, could one adapt those advanced architectures to own classification tasks? The answer lies in technique called transfer learning (TL). In essence, TL is used for merging two neural networks: one, that is quite accurate at some task (e. q. everyday object recognition) and the other, which is mediocre (e. g. 5\% accuracy at beer label recognition). Thanks to the nature of the connection, a worse NN uses expertise of the better one, thus increasing own accuracy. In this chapter I will focus on the most common type of transfer learning, that is given a small data set, which is similar to the one advanced CNN was trained on.\\
+
+Transfer learning step by step:
+\begin{enumerate}[1)]
+\item Slice off the last fully connected layer of advanced neural network, that you base TL on (\autoref{fig:tl_sliced_net}).
+\item Perform inference of your entire training set, using advanced NN with sliced layer and pre-trained weights, ending up with, so called, bottleneck features i. e. a tensor image representations created by a given CNN (\autoref{fig:obtain_bottleneck}).
+\item Perform training on your second (mediocre) neural network using labeled bottleneck features as inputs (\autoref{fig:using_bottleneck}).
+\end{enumerate}
+Above technique could differ depending on below cases:
+\begin{enumerate}[a)]
+\item small data set, which is different than the one advanced CNN was trained on
+\item large data set, which is similar to the one advanced CNN was trained on
+\item large data set, which is different than the one advanced CNN was trained on
+\end{enumerate}
+
+\begin{figure}[h]
+\includegraphics[width=0.8\textwidth]{tl_sliced_net}
+\centering
+\caption{Advanced CNN without last fully connected layer.}
+\label{fig:tl_sliced_net}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{obtain_bottleneck}
+\centering
+\caption{Inference of one image (pink matrix) from training set using advanced CNN with sliced layer and pre-trained weights. The output (green vector) is a bottleneck feature i. e. this CNN's representation of a given image.}
+\label{fig:obtain_bottleneck}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.6\textwidth]{using_bottleneck}
+\centering
+\caption{Inference in second (mediocre) neural network used in transfer learning, which is trained on labeled bottleneck features, with labeling illustrated below.}
+\label{fig:using_bottleneck}
+\end{figure}
 \clearpage
 
 \section{Data augmentation} \label{data_augmentation}
+One can deduce, from previous introduction chapters, that an important requirement for achieving accurate machine learning models is a lot of data. Whereas for more general recognition tasks World Wide Web is a place to search for training images, the more specific the task the higher possibility of manual data collection. In that case, data augmentation is a helpful technique, allowing to artificially inflate small data set by applying a series of transformations and saving result as a new picture. \autoref{fig:augm_ex} presents exemplary augmentation of a single picture of STOP sign, yielding 10 additional training data points.
+
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{augm_ex}
+\centering
+\caption{Data augmentation applied on a single STOP sign image.}
+\label{fig:augm_ex}
+\end{figure}
+
+Transformations performed on images using data augmentation include:
+\begin{enumerate}[a)]
+\item changing brightness - involves converting images from RGB color space to HSV \cite{hsv_def} and adjusting V value
+\item adding noise - imposition of Gaussian noise
+\item blurring - again, Gaussian blur is oftentimes used
+\item rotation - within specific angle range
+\item translation - within specific distance range
+\item shearing - displacement of each image point, according to \autoref{eq:horizontal_shear} and \ref{eq:vertical_shear}, resulting in distortion
+\end{enumerate}
+
+\begin{equation} \label{eq:horizontal_shear}
+(x', y') = (x + my, y)
+\end{equation}
+Formula for horizontal shear of points in 2D space.
+
+\begin{equation} \label{eq:vertical_shear}
+(x', y')=(x, mx +y)
+\end{equation}
+Formula for vertical shear of points in 2D space.
 \clearpage
 
 \section{Solution walkthrough} \label{solution_walkthrough}
+Focus of this chapter is reexamination of \autoref{fig:scheme}, with emphasis on used technology and implementation details.
+
+\begin{enumerate}[1)]
+\item Client application (Android)\\
+This part is a basic interface used for user-server communication. The app has ability to take pictures, using built-in system camera, and then send them to server via software library called Retrofit \cite{retrofit_repo} with a popular RxJava adapter \cite{rxjava_repo}. The application is written in Kotlin programming language, which, as of mid 2017 \cite{kotlin_blogpost}, is officially supported on Android by Google. Kotlin turned out to be much more effective, expressive and less verbose alternative to Java, with which it is interoperable.
+
+\item Beer database (Firebase)\\
+This part is a database with beer information, which is sent to Android application after successful recognition. It resides on Google's NoSql cloud server \cite{nosql_def}. Data is stored as JSON and can be retrieved using very intuitive key-value query system. Despite being simple to launch and maintain, Firebase Realtime Database has currently very poor support for partial query searching, which is very anticipated in the upcoming releases.
+
+\item Server with label classifier (Flask)\\
+This part is a web server, with trained convolutional neural network, acting as beer label classifier. It is implemented in Flask - a Python microframework used for launching REST \cite{rest_def} servers. The endpoint responsible for prediction is called "/predict" and requires an image file from the caller (e. g. Android application). "/predict" obeys REST standard by using two HTTP methods: GET (as it returns encoded prediction of beer) and POST (as it accepts image file from client as input).
+
+\item Trained convolutional neural network from Flask server\\
+This part is a CNN responsible for beer label recognition on Flask server. To create training data set, 2 - 3 pictures of labels were collected per beer. Then data augmentation technique was used, resulting in 300 - 450 images per class. Applying transfer learning created connection between two neural networks - the "worse" one, which is presented in \autoref{fig:worse_net} and the "better" one - Inception-V3 - chosen from \autoref{fig:world_cnns}, due to its small size, quick inference and relatively high accuracy. Entire procedure was implemented using Keras library with TensorFlow backend (in Python programming language). Next chapter provides reader with detailed metrics about obtained ConvNet. 
+\end{enumerate}
+
+\autoref{fig:app}, \ref{fig:firebase_data} and \ref{fig:terminal_server} partially illustrate aforementioned recognition system components.
+
+\begin{figure}[h]
+\includegraphics[width=0.4\textwidth]{app}
+\centering
+\caption{Main screen of Android application. Note the hints given to the user, resulting from prototype's limitations, namely: poor support of advanced searching in Firebase Realtime Database and high risk of wrong prediction given beer label image with a lot of background.}
+\label{fig:app}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.4\textwidth]{firebase_data}
+\centering
+\caption{Firebase Realtime Database with encoded key-value pairs of beer information.}
+\label{fig:firebase_data}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{terminal_server}
+\centering
+\caption{Terminal view of requests sent to Flask server (to "/predict" endpoint) from Android application. "200" return code indicates that request succeeded.}
+\label{fig:terminal_server}
+\end{figure}
+
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{worse_net}
+\centering
+\caption{Regular fully-connected neural network, which accuracy increased due to transfer learning based on Inception-V3. Values in brackets represent amount of neurons in each layer. Whereas number of neurons in hidden layers (f. c. layers) is fixed, inputs and outputs depend, respectively, on size of bottleneck features coming from Inception-V3 and number of beers CNN can recognize (in basic version of prototype it's 10). Both hidden layers use ReLU activation function.}
+\label{fig:worse_net}
+\end{figure}
 \clearpage
 
 \section{Testing} \label{testing}
