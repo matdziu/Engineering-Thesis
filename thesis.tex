@@ -523,7 +523,7 @@ Test for algorithm's scalability involved incorporating additional 10 classes (1
 \clearpage
 
 \section{Related solutions} \label{related_solutions}
-To assess a value of the proposed solution to acceleration of access to beer database problem, a research into available related techniques was conducted. It is worth noting that there seems to be no popular and continuously maintained application solving the issue using AI. 
+To assess a value of the proposed solution to acceleration of access to beer database problem, a research into available related techniques was conducted. It is worth noting that there seems to be no popular and continuously maintained application solving the issue using deep learning. 
 
 \begin{enumerate}[1)]
 \item SIFT algorithm.\\
@@ -538,7 +538,27 @@ Vize.ai is an example of service allowing to easily create custom neural network
 \clearpage
 
 \section{Conclusions} \label{conclusions}
+The evolution in customers' taste and their openness to local breweries resulted in a huge variety of beers available in popular Polish stores like Lidl or Carrefour. Despite this fact, customers still find it cumbersome to choose which product to buy.\\
 
+When faced with a mobile app with beer database, users consider it the most attractive to access beer details by making a photo of front beer label. Scanning bar code seems to be the least popular.\\
+
+Artificial Intelligence (deep learning in particular) incorporated in a mobile application can itself be a driving force behind rapid growth rate of users, following the likes of Shazam.\\
+
+Recent increase in performance of GPUs and data available on the Internet provide a fertile ground for machine learning algorithms, such as neural networks.\\
+
+Currently, the best way to train a neural network is by using a backpropagation algorithm. It is also utilized in CNNs, which are specialized in image recognition (they preserve spatial connections between pixels).\\
+
+Thanks to ILSVRC competition hosted by ImageNet, many world-class CNN architectures emerged. It is particularly important because of the technique called transfer learning, which allows to adapt them to custom recognition tasks.\\
+
+The more specific the task the higher possibility of manual data collection. However, instead of manually collecting thousands of images per class, one can artificially inflate training set by using data augmentation (applying a series of picture transformations).\\
+
+Firebase Realtime Database, which contains data about beers, has currently very poor support for searching. The use of it excluded possibility of OCR implementation, which requires a solid partial query search engine.\\
+
+Flask proved to be small and reliable framework for REST API creation. The prototype runs the server in the local network, however uploading it to Cloud (such as Google App Engine) is extremely easy and requires almost no additional code. \\
+
+Implemented beer label classifier can achieve at least 87\% accuracy under user-friendly conditions, with inference time not exceeding 0.2 second. Aggregation of additional beer labels does not significantly change accuracy nor recognition time. It can be concluded, that drastic increase in number of classes, which CNN is capable of identifying, will result in a classifier, which inference time won't surpass 1 second, while still maintaining around 90\% success rate. \\
+
+There seems to be no popular and continuously maintained application solving beer label recognition problem using deep learning. Untappd app's developers implemented bar code scanning to accelerate beer database access. On the other hand, Vivino is using OCR but for wines only. Once popular NextGlass mobile application has not been updated since 2015. 
 \clearpage
 
 \bibliography{mybib}
