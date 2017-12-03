@@ -3,7 +3,7 @@
 \usepackage{amsfonts, amsmath, amssymb}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage[polish, english]{babel}
 \usepackage[shortlabels]{enumitem}
 \usepackage[utf8]{inputenc}
@@ -454,7 +454,7 @@ This part is a CNN responsible for beer label recognition on Flask server. To cr
 \section{Testing} \label{testing}
 Purpose of this chapter is to provide reader with metrics related to the convolutional neural network used in the prototype, which is the base of this thesis. Those metrics will be later utilized for system evaluation. All experiments were conducted on 3.1 GHz Intel Core i5 CPU with 16 GB 2133 MHz LPDDR3 RAM.\\
 
-\autoref{fig:collected_labels} presents manually collected data set for one class. Augmentation, applied on this beer label, resulted in 150 additional pictures per image, i. e. 302 images total for Harnas beer, and took on average 256.91 seconds to complete. Similar procedure was employed for remaining 9 beer labels. \autoref{fig:augm_subset} contains a small portion of augmented training set. Picture transformations used:
+\autoref{fig:collected_labels} presents manually collected data set for one class. Augmentation, applied on this beer label, resulted in 150 additional pictures per image, i. e. 302 images total for \foreignlanguage{polish}{Harnaś} beer, and took on average 256.91 seconds to complete. Similar procedure was employed for remaining 9 beer labels. \autoref{fig:augm_subset} contains a small portion of augmented training set. Picture transformations used:
 \begin{enumerate}[a)]
 \item changing brightness - for every piece of data (using HSV color model),
 \item adding Gaussian noise - 20\% probability of happening,
@@ -523,9 +523,22 @@ Test for algorithm's scalability involved incorporating additional 10 classes (1
 \clearpage
 
 \section{Related solutions} \label{related_solutions}
+To assess a value of the proposed solution to acceleration of access to beer database problem, a research into available related techniques was conducted. It is worth noting that there seems to be no popular and continuously maintained application solving the issue using AI. 
+
+\begin{enumerate}[1)]
+\item SIFT algorithm.\\
+Scale-Invariant Feature Transform algorithm was first described by Lowe in 1999 \cite{lowe_sift} and was used for beer label recognition by Weitz et al. in Stanford University \cite{beer_sift}. The technique extracts local features from image and later uses them for classification. SIFT proved to be robust to uniform scaling, orientation and illumination changes. It is, however, protected by patent (additional costs). Lowe's algorithm is considered mathematically complicated and computationally heavy. Each beer label identification using this solution took about 10 seconds on 8 parallel processors in MATLAB (again, more computational power imposes more costs). SIFT is included in popular OpenCV library.
+\item Bar code and QR code scanners.\\
+Ohbuchi et al. \cite{barcode_mobile} presented methods capable of very effective code scanning using mobile devices, which are now used across many fields for fast data retrieval. The amount of information stored in such codes is limited and defined by global norms (e. g. 1D bar code obeying Code 39 standard is advised not to contain more than 25 characters, while QR code limits are much higher - up to 1520 alpha numeric characters). Untappd is a social beer drinking mobile app, which uses bar code scanning to access its database. Despite this technique being very reliable and accurate, it creates a challenge of staying up to date with all bar code changes implemented by brewery, that oftentimes take place during some promotional campaigns. Bar code scanning also requires user to physically search for bar codes on a bottle and lacks the "fun" factor of image-based searches. QR codes are still not widely used for product identification.
+\item OCR.\\
+Vivino is a mobile application with access to world's largest wine database. Its algorithm used for obtaining data is based on Optical Character Recognition, namely, keywords are being extracted from wine label photo and used as an input to app's search engine. The highest costs in Vivino's approach are associated with a need to incorporate third party OCR provider (e. g. ABBYY) and creation of database supporting advanced partial searching. 
+\item Custom image recognition API provider.\\
+Vize.ai is an example of service allowing to easily create custom neural network to recognize specific images. It abstracts all complexity related to designing own CNN, training and uploading it to remote server. On the contrary, one of the cognitive purposes of this thesis was to delve into image recognition complexities and to obey MVP rules (Minimum Viable Product) articulated, among others, by Ries \cite{lean_startup}, hence third party recognition provider was not taken under consideration.
+\end{enumerate} 
 \clearpage
 
 \section{Conclusions} \label{conclusions}
+
 \clearpage
 
 \bibliography{mybib}

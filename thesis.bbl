@@ -84,8 +84,25 @@
   with gradient-based learning}, Shape, contour and grouping in computer
   vision,  (1999).
 
+\bibitem{lowe_sift}
+{\sc D.~G. Lowe}, {\em Object recognition from local scale-invariant features},
+  in Computer vision, 1999. The proceedings of the seventh IEEE international
+  conference on, vol.~2, Ieee, 1999, pp.~1150--1157.
+
 \bibitem{ai_modern_approach}
 {\sc P.~Norvig and S.~J. Russell}, {\em {Artificial Intelligence: A Modern
   Approach}}, Prentice Hall, 2010, pp.~5--16, 730.
+
+\bibitem{barcode_mobile}
+{\sc E.~Ohbuchi, H.~Hanaizumi, and L.~A. Hock}, {\em Barcode readers using the
+  camera device in mobile phones}, in Cyberworlds, 2004 International
+  Conference on, IEEE, 2004, pp.~260--265.
+
+\bibitem{lean_startup}
+{\sc E.~Reis}, {\em The lean startup}, New York: Crown Business,  (2011).
+
+\bibitem{beer_sift}
+{\sc A.~Weitz and A.~Chaudhari}, {\em Beer label recognition and
+  classification}.
 
 \end{thebibliography}

@@ -21,45 +21,47 @@ Warning--to sort, need author or key in rxjava_repo
 Warning--to sort, need author or key in kotlin_blogpost
 Warning--to sort, need author or key in nosql_def
 Warning--to sort, need author or key in rest_def
-You've used 19 entries,
+Warning--empty journal in beer_sift
+Warning--empty year in beer_sift
+You've used 23 entries,
             2030 wiz_defined-function locations,
-            569 strings with 5703 characters,
-and the built_in function-call counts, 3580 in all, are:
-= -- 304
-> -- 82
+            590 strings with 6216 characters,
+and the built_in function-call counts, 4901 in all, are:
+= -- 430
+> -- 127
 < -- 0
-+ -- 43
-- -- 22
-* -- 215
-:= -- 496
-add.period$ -- 33
-call.type$ -- 19
-change.case$ -- 67
++ -- 62
+- -- 36
+* -- 309
+:= -- 692
+add.period$ -- 37
+call.type$ -- 23
+change.case$ -- 86
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 170
-empty$ -- 424
-format.name$ -- 22
-if$ -- 806
+cite$ -- 39
+duplicate$ -- 239
+empty$ -- 539
+format.name$ -- 36
+if$ -- 1094
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 4
-newline$ -- 74
-num.names$ -- 10
-pop$ -- 137
+int.to.str$ -- 23
+missing$ -- 8
+newline$ -- 86
+num.names$ -- 18
+pop$ -- 162
 preamble$ -- 1
-purify$ -- 49
+purify$ -- 64
 quote$ -- 0
-skip$ -- 121
+skip$ -- 171
 stack$ -- 0
-substring$ -- 127
-swap$ -- 28
+substring$ -- 220
+swap$ -- 54
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 74
-warning$ -- 14
-while$ -- 12
-width$ -- 21
-write$ -- 153
-(There were 16 warnings)
+type$ -- 90
+warning$ -- 16
+while$ -- 26
+width$ -- 25
+write$ -- 188
+(There were 18 warnings)
