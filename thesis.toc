@@ -1,13 +1,13 @@
 \select@language {english}
 \contentsline {section}{\numberline {1}Problem definition}{1}{section.1}
 \contentsline {section}{\numberline {2}Solution overview}{2}{section.2}
-\contentsline {section}{\numberline {3}Introduction to Artificial Intelligence}{4}{section.3}
-\contentsline {section}{\numberline {4}Introduction to Neural Networks}{6}{section.4}
-\contentsline {section}{\numberline {5}Introduction to Convolutional Neural Networks}{11}{section.5}
-\contentsline {section}{\numberline {6}Comparison of world-class CNN architectures}{15}{section.6}
-\contentsline {section}{\numberline {7}Transfer learning}{16}{section.7}
-\contentsline {section}{\numberline {8}Data augmentation}{18}{section.8}
-\contentsline {section}{\numberline {9}Solution walkthrough}{19}{section.9}
-\contentsline {section}{\numberline {10}Testing}{22}{section.10}
-\contentsline {section}{\numberline {11}Related solutions}{26}{section.11}
+\contentsline {section}{\numberline {3}Related solutions}{4}{section.3}
+\contentsline {section}{\numberline {4}Introduction to Artificial Intelligence}{5}{section.4}
+\contentsline {section}{\numberline {5}Introduction to Neural Networks}{7}{section.5}
+\contentsline {section}{\numberline {6}Introduction to Convolutional Neural Networks}{12}{section.6}
+\contentsline {section}{\numberline {7}Comparison of world-class CNN architectures}{16}{section.7}
+\contentsline {section}{\numberline {8}Transfer learning}{17}{section.8}
+\contentsline {section}{\numberline {9}Data augmentation}{19}{section.9}
+\contentsline {section}{\numberline {10}Solution walkthrough}{20}{section.10}
+\contentsline {section}{\numberline {11}Testing}{23}{section.11}
 \contentsline {section}{\numberline {12}Conclusions}{27}{section.12}
