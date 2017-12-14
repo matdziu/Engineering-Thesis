@@ -19,7 +19,7 @@
 \setcounter{page}{1}
 
 \section{Problem definition} \label{problem_definition}
-KPMG's report on the alcoholic beverages market in Poland \cite{kpmg_alco} claims, that in 2013, Poles spent 41.1 billion zlotys on alcohol, with beer being a large portion of that amount (47\%). The report also states that, as of 2014, Polish customers choose beers based on premiumisation (31\% of customers), innovation (29\%) and region affiliations (30\%), with manufacturers predicting significant rise of interest in those attributes in the future. The evolution in customers' taste and their openness resulted in many local shops offering a vast range of, so called, "craft beers" coming from lesser known breweries. However, it's also not uncommon to stumble upon large product shelves, with dozens different beers types, in more popular Polish stores like Lidl and Carrefour.\\
+Report on the alcoholic beverages market in Poland, performed by audit company KPMG \cite{kpmg_alco}, claims, that in 2013, Poles spent 41.1 billion zlotys on alcohol, with beer being a large portion of that amount (47\%). The report also states that, as of 2014, Polish customers choose beers based on premiumisation (31\% of customers), innovation (29\%) and region affiliations (30\%), with manufacturers predicting significant rise of interest in those attributes in the future. The evolution in customers' taste and their openness resulted in many local shops offering a vast range of, so called, "craft beers" coming from lesser known breweries. However, it's also not uncommon to stumble upon large product shelves, with dozens different beers types, in more popular Polish stores like Lidl and Carrefour.\\
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{beer_shelf}
@@ -32,9 +32,9 @@ The question this thesis posed at first was "How technology could be used to hel
 \clearpage
 
 \section{Solution overview} \label{solution_overview}
-To further investigate the problem articulated in Chapter \ref{problem_definition}, I conducted a survey \cite{survey}. Its main question, that I want to focus on in this section, was "Imagine standing in front of a big shelf with hundreds of craft beers you've never seen before. There's no one there to help you except a mobile app with beer database, which you can access in different ways: typing beer name, using voice to input beer name, making photo of front beer label, making photo of bar code in the back of the bottle. Rank those ways starting from the one that's the most intuitive and appealing to you.". Interestingly, the most popular option, among 50 people asked, was making a photo of front beer label. This method of database access was almost equally popular to the most standard human-device communication interface, which is keyboard (typing a beer name). Whereas \autoref{fig:survey_chart} presents the overall trend, \autoref{fig:survey_table} provides us with detailed numbers: 60\% of people chose, in either first or second place, making a photo of front beer label as their preference (same as in typing a beer name by hand). The last thing that's worth noting is the lack of popularity of barcode scanning.\\
+To further investigate the problem articulated in Chapter \ref{problem_definition}, a survey was conducted \cite{survey}. Its main question was "Imagine standing in front of a big shelf with hundreds of craft beers you've never seen before. There's no one there to help you except a mobile app with beer database, which you can access in different ways: typing beer name, using voice to input beer name, making photo of front beer label, making photo of bar code in the back of the bottle. Rank those ways starting from the one that's the most intuitive and appealing to you.". Interestingly, the most popular option, among 50 people asked, was making a photo of front beer label. This method of database access was almost equally popular to the most standard human-device communication interface, which is keyboard (typing a beer name). Whereas \autoref{fig:survey_chart} presents the overall trend, \autoref{fig:survey_table} provides us with detailed numbers: 60\% of people chose, in either first or second place, making a photo of front beer label as their preference (same as in typing a beer name by hand). The last thing that's worth noting is the lack of popularity of barcode scanning.\\
 
-Based on the aforementioned survey and my personal experience, I want to formulate a solution to the problem, stated in Chapter \ref{problem_definition}, as a design and implementation of server-client recognition system for beer labels.
+Based on the aforementioned survey and personal experience, a solution to the problem, stated in Chapter \ref{problem_definition}, was formulated as a design and implementation of server-client recognition system for beer labels.
 
 \begin{figure}[h]
 \includegraphics[width=0.8\textwidth]{survey_chart}
@@ -107,7 +107,7 @@ Prerequisites of performing such tasks are, usually, a large amount of data (e. 
 \label{fig:cisco_era}
 \end{figure}
 
-I want to conclude this chapter with important distinction between Machine Learning (ML) and Artificial Intelligence. The former is considered to be a subset of the latter. Whereas AI comprises of knowledge base systems, genetic algorithms, Bayesian statistics etc., none of that is considered ML. Machine Learning can be defined as an act of optimization along a certain dimension (e. g. minimizing the error of choosing a wrong prediction of a beer label based on an image) and a primary tool for that is an algorithm called neural network, loosely based on a human brain cell.
+It is important to distinguish between Machine Learning (ML) and Artificial Intelligence. The former is considered to be a subset of the latter. Whereas AI comprises of knowledge base systems, genetic algorithms, Bayesian statistics etc., none of that is considered ML. Machine Learning can be defined as an act of optimization along a certain dimension (e. g. minimizing the error of choosing a wrong prediction of a beer label based on an image) and a primary tool for that is an algorithm called neural network, loosely based on a human brain cell.
 \clearpage
 
 \section{Introduction to Neural Networks} \label{introduction_to_nn}
@@ -153,7 +153,7 @@ Before delving into learning process of NNs, it's important to make two addition
 \item error function (also called cost function),
 \item activation function.
 \end{enumerate}
-Ad 1. The most reliable way for the algorithm to represent predictions is through a vector of probabilities. Consider an example of beer name predictions based on image of label. \autoref{fig:probability_vectors} shows a probability output of a classifier (notice that all values sum to 1), compared with an output, that it should strive for. A cost function I want to introduce in this section, called categorical cross entropy (\autoref{eq:cross_entropy}), simply measures the correlation between those two probability distributions (predicted and ideal). Notice that multiplication by one-hot encoded examples, forces the function to only compare non-zero elements of ideal distribution, with respective values of classifier output further from 1 being penalized more than values close to 1 (thanks to the nature of logarithm).\\ 
+Ad 1. The most reliable way for the algorithm to represent predictions is through a vector of probabilities. Consider an example of beer name predictions based on image of label. \autoref{fig:probability_vectors} shows a probability output of a classifier (notice that all values sum to 1), compared with an output, that it should strive for. A cost function, introduced in this section, called categorical cross entropy (\autoref{eq:cross_entropy}), simply measures the correlation between those two probability distributions (predicted and ideal). Notice that multiplication by one-hot encoded examples, forces the function to only compare non-zero elements of ideal distribution, with respective values of classifier output further from 1 being penalized more than values close to 1 (thanks to the nature of logarithm).\\ 
 
 \begin{figure}[h]
 \includegraphics[width=0.8\textwidth]{probability_vectors}
@@ -199,7 +199,7 @@ where:
 \item[$\alpha$] is a learning rate (indicating what portion of gradient should be used).
 \end{itemize}
 
-Let us consider a neural network in \autoref{fig:simple_net} with three units, one hidden layer and sigmoid activation function. Before conducting backpropagation, I performed, so called, forward pass, which is simply a mathematical inference of outputs, given inputs (\autoref{eq:inference}).\\
+Let us consider a neural network in \autoref{fig:simple_net} with three units, one hidden layer and sigmoid activation function. Before conducting backpropagation, so called, forward pass was performed, which simply is a mathematical inference of outputs, given inputs (\autoref{eq:inference}).\\
 
 \begin{figure}[h]
 \includegraphics[width=0.6\textwidth]{simple_net}
@@ -335,7 +335,7 @@ Furthermore, authors of the comparison used standardization not only by task and
 \clearpage
 
 \section{Transfer learning} \label{transfer_learning}
-The state-of-the-art CNN architectures, mentioned previously, are result of extensive experimentation, hyperparameters tuning, many years of expertise and months of dedicated hard work. They were based on ImageNet database and often took weeks to train. How then, could one adapt those advanced architectures to own classification tasks? The answer lies in technique called transfer learning (TL). In essence, TL is used for merging two neural networks: one, that is quite accurate at some task (e. q. everyday object recognition) and the other, which is mediocre (e. g. 5\% accuracy at beer label recognition). Thanks to the nature of the connection, a worse NN uses expertise of the better one, thus increasing own accuracy. In this chapter I will focus on the most common type of transfer learning, that is given a small data set, which is similar to the one advanced CNN was trained on.\\
+The state-of-the-art CNN architectures, mentioned previously, are result of extensive experimentation, hyperparameters tuning, many years of expertise and months of dedicated hard work. They were based on ImageNet database and often took weeks to train. How then, could one adapt those advanced architectures to own classification tasks? The answer lies in technique called transfer learning (TL). In essence, TL is used for merging two neural networks: one, that is quite accurate at some task (e. q. everyday object recognition) and the other, which is mediocre (e. g. 5\% accuracy at beer label recognition). Thanks to the nature of the connection, a worse NN uses expertise of the better one, thus increasing own accuracy. This chapter focuses on the most common type of transfer learning, that is given a small data set, which is similar to the one advanced CNN was trained on.\\
 
 Transfer learning step by step:
 \begin{enumerate}[1)]
