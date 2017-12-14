@@ -1,13 +1,14 @@
 \select@language {english}
-\contentsline {section}{\numberline {1}Problem definition}{1}{section.1}
-\contentsline {section}{\numberline {2}Solution overview}{2}{section.2}
-\contentsline {section}{\numberline {3}Related solutions}{4}{section.3}
-\contentsline {section}{\numberline {4}Introduction to Artificial Intelligence}{5}{section.4}
-\contentsline {section}{\numberline {5}Introduction to Neural Networks}{7}{section.5}
-\contentsline {section}{\numberline {6}Introduction to Convolutional Neural Networks}{12}{section.6}
-\contentsline {section}{\numberline {7}Comparison of world-class CNN architectures}{16}{section.7}
-\contentsline {section}{\numberline {8}Transfer learning}{17}{section.8}
-\contentsline {section}{\numberline {9}Data augmentation}{19}{section.9}
-\contentsline {section}{\numberline {10}Solution walkthrough}{20}{section.10}
-\contentsline {section}{\numberline {11}Testing}{23}{section.11}
-\contentsline {section}{\numberline {12}Conclusions}{27}{section.12}
+\contentsline {section}{\numberline {1}General information}{1}{section.1}
+\contentsline {section}{\numberline {2}Problem definition}{2}{section.2}
+\contentsline {section}{\numberline {3}Solution overview}{3}{section.3}
+\contentsline {section}{\numberline {4}Related solutions}{5}{section.4}
+\contentsline {section}{\numberline {5}Introduction to Artificial Intelligence}{6}{section.5}
+\contentsline {section}{\numberline {6}Introduction to Neural Networks}{8}{section.6}
+\contentsline {section}{\numberline {7}Introduction to Convolutional Neural Networks}{13}{section.7}
+\contentsline {section}{\numberline {8}Comparison of world-class CNN architectures}{17}{section.8}
+\contentsline {section}{\numberline {9}Transfer learning}{18}{section.9}
+\contentsline {section}{\numberline {10}Data augmentation}{20}{section.10}
+\contentsline {section}{\numberline {11}Solution walkthrough}{21}{section.11}
+\contentsline {section}{\numberline {12}Testing}{24}{section.12}
+\contentsline {section}{\numberline {13}Conclusions}{28}{section.13}

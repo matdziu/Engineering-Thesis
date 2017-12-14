@@ -18,6 +18,36 @@
 \clearpage
 \setcounter{page}{1}
 
+\section{General information} \label{general}
+This chapter is a summary of the most important parts of presented engineering thesis, which are subsequently explained in detail.\\
+
+\begin{enumerate}
+\item \textbf{Problem definition.}\\
+Acceleration of user access to beer database using computer vision and mobile device.
+
+\item \textbf{Practical purpose.}\\
+Design and implementation of server-client recognition system for beer labels.
+
+\item \textbf{Cognitive purposes.}
+	\begin{enumerate}
+	\item Studying impact of convolutional neural network (CNN) architecture and data augmentation on accuracy and training time of the classifier.
+	\item Gaining deeper understanding of computer vision using CNNs.
+	\item Finding minimum number of training iterations and images per class (per beer) to achieve at least 85\% accuracy of the classifier.
+	\end{enumerate}
+
+\item \textbf{Scope.}
+	\begin{enumerate}
+	\item Developing a script for data augmentation.
+	\item Developing a script for performing bottleneck features extraction and training of convolutional neural network.
+	\item Developing RESTful server for providing label predictions.
+	\item Developing Android application for capturing and sending images to predict to server.
+	\end{enumerate}
+
+\item \textbf{Thesis.}
+Implemented beer label classifier is scalable and can achieve at least 90\% accuracy under user-friendly conditions, with inference time not exceeding 1 second.
+\end{enumerate}
+\clearpage
+
 \section{Problem definition} \label{problem_definition}
 Report on the alcoholic beverages market in Poland, performed by audit company KPMG \cite{kpmg_alco}, claims, that in 2013, Poles spent 41.1 billion zlotys on alcohol, with beer being a large portion of that amount (47\%). The report also states that, as of 2014, Polish customers choose beers based on premiumisation (31\% of customers), innovation (29\%) and region affiliations (30\%), with manufacturers predicting significant rise of interest in those attributes in the future. The evolution in customers' taste and their openness resulted in many local shops offering a vast range of, so called, "craft beers" coming from lesser known breweries. However, it's also not uncommon to stumble upon large product shelves, with dozens different beers types, in more popular Polish stores.\\
 
