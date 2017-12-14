@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[11pt, a4paper]{article}
 \usepackage[margin=2.54cm]{geometry}
 \usepackage{amsfonts, amsmath, amssymb}
 \usepackage{graphicx}
@@ -350,7 +350,7 @@ Ad 1. Filter (also called convolution window) is a tool for obtaining convolutio
 
 Ad 2. Subsampling layers serve two purposes: reducing network dimensionality and helping it to generalize. One of the most popular subsampling techniques used today is max pooling. A window slides across a matrix with a certain stride (in a way similar to filter), takes element with the highest value and saves it to a reduced tensor (\autoref{fig:max_pooling}).\\
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=0.8\textwidth]{max_pooling}
 \centering
 \caption{Consecutive steps of max pooling with window of size 2x2 and stride 2. Green matrix is a reduced tensor.}

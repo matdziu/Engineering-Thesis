@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[11pt, a4paper]{article}
 \usepackage[margin=2.54cm]{geometry}
 \usepackage{amsfonts, amsmath, amssymb}
 \usepackage{graphicx}
@@ -350,7 +350,7 @@ Ad 1. Filter (also called convolution window) is a tool for obtaining convolutio
 
 Ad 2. Subsampling layers serve two purposes: reducing network dimensionality and helping it to generalize. One of the most popular subsampling techniques used today is max pooling. A window slides across a matrix with a certain stride (in a way similar to filter), takes element with the highest value and saves it to a reduced tensor (\autoref{fig:max_pooling}).\\
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=0.8\textwidth]{max_pooling}
 \centering
 \caption{Consecutive steps of max pooling with window of size 2x2 and stride 2. Green matrix is a reduced tensor.}
@@ -492,7 +492,7 @@ This part is a web server, with trained convolutional neural network, acting as 
 This part is a CNN created exclusively for beer label recognition on Flask server. To create training data set, 2 - 3 pictures of labels were collected per beer. Then data augmentation technique was used, resulting in 300 - 450 images per class. Applying transfer learning created connection between two neural networks - the "worse" one, which is presented in \autoref{fig:worse_net} and the "better" one - Inception-V3 - chosen from \autoref{fig:world_cnns}, due to its small size, quick inference and relatively high accuracy. Entire procedure was implemented using Keras library with TensorFlow backend (in Python programming language). Next chapter provides reader with detailed metrics about obtained ConvNet. 
 \end{enumerate}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=0.5\textwidth]{worse_net}
 \centering
 \caption{Regular fully-connected neural network, which accuracy increased due to transfer learning based on Inception-V3. Values in brackets represent amount of neurons in each layer. Whereas number of neurons in hidden layers (f. c. layers) is fixed, inputs and outputs depend, respectively, on size of bottleneck features coming from Inception-V3 and number of beers CNN can recognize (in basic version of prototype it's 10). Both hidden layers use ReLU activation function.}
@@ -547,7 +547,7 @@ Categorical cross entropy error function was used during training. Number of epo
 
 Average time of a single beer label recognition, out of 10 classes, is 0.1 second. Implemented CNN was tested in different lighting conditions and with or without visible background in input image. \autoref{fig:test_table} accumulates outcomes of these tests.\\
 
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=0.4\textwidth]{test_table}
 \centering
 \caption{Test results for 10-class CNN (different lighting conditions and background visibility of input image).}.
