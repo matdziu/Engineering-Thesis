@@ -454,7 +454,7 @@ Formula for vertical shear of points in 2D space.
 Focus of this chapter is reexamination of \autoref{fig:scheme}, with emphasis on used technology and implementation details.
 
 \begin{enumerate}[1)]
-\item Client application (Android).\\
+\item Client application (Android) \cite{android_app_repo}. \\
 This part is a basic interface used for user-server communication. The app has ability to take pictures, using built-in system camera, and then send them to server via software library called Retrofit \cite{retrofit_repo} with a popular RxJava adapter \cite{rxjava_repo}. The application is written in Kotlin programming language, which, as of mid 2017 \cite{kotlin_blogpost}, is officially supported on Android by Google. Kotlin turned out to be much more effective, expressive and less verbose alternative to Java, with which it is interoperable.\\
 
 Android app was developed from scratch in Android Studio integrated development environment (IDE) utilizing object-oriented and functional programming paradigms. Application's main component is Activity, which represents a screen that user can interact with (\autoref{fig:app}). Clicking on camera button at the bottom of main screen results in redirection to device's camera. After successful capture of label photo, proper information about classified beer is shown. 
@@ -478,7 +478,7 @@ Data about each beer were entered manually using Firebase console. Each beer is 
 \label{fig:firebase_data}
 \end{figure}
 
-\item Server with label classifier (Flask).\\
+\item Server with label classifier (Flask) \cite{flask_server_repo}. \\
 This part is a web server, with trained convolutional neural network, acting as beer label classifier. It is implemented from scratch in Flask - a Python microframework used for launching REST \cite{rest_def} servers. The endpoint responsible for prediction is called "/predict" and requires an image file from the caller (e. g. Android application). "/predict" obeys REST standard by using two HTTP methods: GET (as it returns encoded prediction of beer) and POST (as it accepts image file from client as input).
 
 \begin{figure}[h]
@@ -488,7 +488,7 @@ This part is a web server, with trained convolutional neural network, acting as 
 \label{fig:terminal_server}
 \end{figure}
 
-\item Trained convolutional neural network from Flask server.\\
+\item Trained convolutional neural network from Flask server \cite{cnn_repo} \cite{data_augm_repo}. \\
 This part is a CNN created exclusively for beer label recognition on Flask server. To create training data set, 2 - 3 pictures of labels were collected per beer. Then data augmentation technique was used, resulting in 300 - 450 images per class. Applying transfer learning created connection between two neural networks - the "worse" one, which is presented in \autoref{fig:worse_net} and the "better" one - Inception-V3 - chosen from \autoref{fig:world_cnns}, due to its small size, quick inference and relatively high accuracy. Entire procedure was implemented using Keras library with TensorFlow backend (in Python programming language). Next chapter provides reader with detailed metrics about obtained ConvNet. 
 \end{enumerate}
 

@@ -16,52 +16,56 @@ Warning--to sort, need author or key in chain_rule_def
 Warning--to sort, need author or key in rgb_def
 Warning--to sort, need author or key in synset_def
 Warning--to sort, need author or key in hsv_def
+Warning--to sort, need author or key in android_app_repo
 Warning--to sort, need author or key in retrofit_repo
 Warning--to sort, need author or key in rxjava_repo
 Warning--to sort, need author or key in kotlin_blogpost
 Warning--to sort, need author or key in nosql_def
+Warning--to sort, need author or key in flask_server_repo
 Warning--to sort, need author or key in rest_def
+Warning--to sort, need author or key in cnn_repo
+Warning--to sort, need author or key in data_augm_repo
 Warning--empty journal in beer_sift
 Warning--empty year in beer_sift
-You've used 23 entries,
+You've used 27 entries,
             2030 wiz_defined-function locations,
-            590 strings with 6216 characters,
-and the built_in function-call counts, 4901 in all, are:
-= -- 430
-> -- 127
+            603 strings with 6764 characters,
+and the built_in function-call counts, 5537 in all, are:
+= -- 486
+> -- 131
 < -- 0
-+ -- 62
++ -- 66
 - -- 36
-* -- 309
-:= -- 692
-add.period$ -- 37
-call.type$ -- 23
-change.case$ -- 86
+* -- 341
+:= -- 768
+add.period$ -- 45
+call.type$ -- 27
+change.case$ -- 98
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 239
-empty$ -- 539
+cite$ -- 47
+duplicate$ -- 271
+empty$ -- 627
 format.name$ -- 36
-if$ -- 1094
+if$ -- 1246
 int.to.chr$ -- 0
-int.to.str$ -- 23
+int.to.str$ -- 27
 missing$ -- 8
-newline$ -- 86
+newline$ -- 102
 num.names$ -- 18
-pop$ -- 162
+pop$ -- 190
 preamble$ -- 1
-purify$ -- 64
+purify$ -- 72
 quote$ -- 0
-skip$ -- 171
+skip$ -- 195
 stack$ -- 0
-substring$ -- 220
-swap$ -- 54
+substring$ -- 240
+swap$ -- 58
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 90
-warning$ -- 16
+type$ -- 106
+warning$ -- 20
 while$ -- 26
-width$ -- 25
-write$ -- 188
-(There were 18 warnings)
+width$ -- 29
+write$ -- 220
+(There were 22 warnings)

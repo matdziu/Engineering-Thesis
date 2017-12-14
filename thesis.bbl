@@ -1,5 +1,26 @@
 \begin{thebibliography}{10}
 
+\bibitem{android_app_repo}
+{\em Repository of {Android} application used for beer label recognition}.
+\newblock \url{https://github.com/matdziu/BeerAI-App}, access: December 14,
+  2017.
+
+\bibitem{flask_server_repo}
+{\em Repository of {REST} server ({Flask}) used for receiving beer label image
+  from client and sending predictions}.
+\newblock \url{https://github.com/matdziu/BeerAI-Server}, access: December 14,
+  2017.
+
+\bibitem{data_augm_repo}
+{\em Repository of scripts performing data augmentation}.
+\newblock \url{https://github.com/matdziu/BeerAI-Data}, access: December 14,
+  2017.
+
+\bibitem{cnn_repo}
+{\em Repository of scripts performing inference and training of {CNN}}.
+\newblock \url{https://github.com/matdziu/BeerAI-Model}, access: December 14,
+  2017.
+
 \bibitem{hsv_def}
 {\em {HSV} color model definition}.
 \newblock \url{https://en.wikipedia.org/wiki/HSL_and_HSV}, access: November 18,

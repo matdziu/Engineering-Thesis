@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.23)  14 DEC 2017 21:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.23)  14 DEC 2017 21:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1201,7 +1201,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 457--459
 
  []
 
-<images/app.png, id=428, 301.125pt x 426.59375pt>
+<images/app.png, id=429, 301.125pt x 426.59375pt>
 File: images/app.png Graphic file (type png)
  <use images/app.png>
 Package pdftex.def Info: images/app.png used on input line 463.
@@ -1220,14 +1220,14 @@ as been already used, duplicate ignored
                                                   \fi \fi 
 l.471 
        <./images/app.png>]
-<images/firebase_data.png, id=444, 528.97626pt x 410.53375pt>
+<images/firebase_data.png, id=446, 528.97626pt x 410.53375pt>
 File: images/firebase_data.png Graphic file (type png)
 
 <use images/firebase_data.png>
 Package pdftex.def Info: images/firebase_data.png used on input line 475.
 (pdftex.def)             Requested size: 281.8561pt x 218.747pt.
 
-<images/terminal_server.png, id=446, 621.32124pt x 110.4125pt>
+<images/terminal_server.png, id=449, 621.32124pt x 110.4125pt>
 File: images/terminal_server.png Graphic file (type png)
 
 <use images/terminal_server.png>
@@ -1246,7 +1246,7 @@ r (name{figure.27}) has been already used, duplicate ignored
                                                   \fi \fi 
 l.493 \end{enumerate}
                       <./images/firebase_data.png> <./images/terminal_server.pn
-g>] <images/worse_net.png, id=459, 391.4625pt x 231.86626pt>
+g>] <images/worse_net.png, id=465, 391.4625pt x 231.86626pt>
 File: images/worse_net.png Graphic file (type png)
 
 <use images/worse_net.png>
@@ -1263,14 +1263,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 504--505
 
  []
 
-<images/collected_labels.png, id=469, 320.19624pt x 122.4575pt>
+<images/collected_labels.png, id=477, 320.19624pt x 122.4575pt>
 File: images/collected_labels.png Graphic file (type png)
 
 <use images/collected_labels.png>
 Package pdftex.def Info: images/collected_labels.png used on input line 517.
 (pdftex.def)             Requested size: 234.87769pt x 89.82858pt.
 
-<images/augm_subset.png, id=470, 504.88625pt x 283.0575pt>
+<images/augm_subset.png, id=478, 504.88625pt x 283.0575pt>
 File: images/augm_subset.png Graphic file (type png)
 
 <use images/augm_subset.png>
@@ -1296,14 +1296,14 @@ l.531
                                                   \fi \fi 
 l.531 
        <./images/collected_labels.png> <./images/augm_subset.png>]
-<images/10_class_acc.png, id=488, 597.23125pt x 432.61626pt>
+<images/10_class_acc.png, id=496, 597.23125pt x 432.61626pt>
 File: images/10_class_acc.png Graphic file (type png)
 
 <use images/10_class_acc.png>
 Package pdftex.def Info: images/10_class_acc.png used on input line 535.
 (pdftex.def)             Requested size: 258.36688pt x 187.15016pt.
 
-<images/10_class_err.png, id=489, 628.3475pt x 434.62375pt>
+<images/10_class_err.png, id=497, 628.3475pt x 434.62375pt>
 File: images/10_class_err.png Graphic file (type png)
 
 <use images/10_class_err.png>
@@ -1327,14 +1327,14 @@ l.549
                                                   \fi \fi 
 l.549 
        <./images/10_class_acc.png> <./images/10_class_err.png>]
-<images/test_table.png, id=499, 1368.11125pt x 3086.53125pt>
+<images/test_table.png, id=507, 1368.11125pt x 3086.53125pt>
 File: images/test_table.png Graphic file (type png)
 
 <use images/test_table.png>
 Package pdftex.def Info: images/test_table.png used on input line 551.
 (pdftex.def)             Requested size: 187.89928pt x 423.86952pt.
 
-<images/20_class_acc.png, id=502, 557.08125pt x 362.35374pt>
+<images/20_class_acc.png, id=510, 557.08125pt x 362.35374pt>
 File: images/20_class_acc.png Graphic file (type png)
 
 <use images/20_class_acc.png>
@@ -1344,7 +1344,7 @@ Package pdftex.def Info: images/20_class_acc.png used on input line 560.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/20_class_err.png, id=503, 549.05125pt x 378.41376pt>
+<images/20_class_err.png, id=511, 549.05125pt x 378.41376pt>
 File: images/20_class_err.png Graphic file (type png)
 
 <use images/20_class_err.png>
@@ -1426,7 +1426,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 593--594
 [28
 
 ] (./thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 56--60
+Underfull \hbox (badness 2846) in paragraph at lines 15--18
+[]\T1/cmr/m/it/10.95 Repository of scripts per-form-ing data aug-men-ta-tion\T1
+/cmr/m/n/10.95 .  []$\T1/cmtt/m/n/10.95 https : / / github . com / matdziu /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--81
 []\T1/cmr/m/it/10.95 CPU vs GPU per-for-mance\T1/cmr/m/n/10.95 .  []$\T1/cmtt/m
 /n/10.95 http : / / michaelgalloy . com / 2013 / 06 / 11 /
  []
@@ -1445,10 +1451,10 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 601.
  ) 
 Here is how much of TeX's memory you used:
- 8227 strings out of 492995
- 116713 string characters out of 6132703
- 223170 words of memory out of 5000000
- 11443 multiletter control sequences out of 15000+600000
+ 8235 strings out of 492995
+ 116851 string characters out of 6132703
+ 223321 words of memory out of 5000000
+ 11447 multiletter control sequences out of 15000+600000
  13062 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,5n,32p,1685b,476s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1469,10 +1475,10 @@ ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2017/te
 xmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on thesis.pdf (31 pages, 7383555 bytes).
+Output written on thesis.pdf (31 pages, 7385548 bytes).
 PDF statistics:
- 644 PDF objects out of 1000 (max. 8388607)
- 514 compressed objects within 6 object streams
- 187 named destinations out of 1000 (max. 500000)
+ 659 PDF objects out of 1000 (max. 8388607)
+ 529 compressed objects within 6 object streams
+ 191 named destinations out of 1000 (max. 500000)
  280 words of extra memory for PDF output out of 10000 (max. 10000000)
 
