@@ -171,7 +171,7 @@ where:
 \item[$p_i$] is the $i^{th}$ element of probability vector $p$ predicted by the classifier.
 \end{itemize}
 
-Ad 2. Unit's value $in_i^{(k)}$ is rarely propagated explicitly to next layers. So called activation function is used instead. The one I'll be introducing in this section is called sigmoid (\autoref{eq:sigmoid}). The updated model of simple neural network from \autoref{fig:no_activation_net} is shown in \autoref{fig:activation_net}. One thing worth pointing out is a difference between sigmoid and softmax function (\autoref{eq:softmax}) - both used in artificial neural networks. Whereas sigmoid inputs a single value and outputs a normalized scalar, softmax inputs a list of values and outputs a vector of real numbers in range [0, 1] that add up to 1, thus can be interpreted as a probability distribution. Sigmoid is used in hidden units, while softmax is usually applied in the last output layer. Both functions can be categorized as logistic functions.\\
+Ad 2. Unit's value $in_i^{(k)}$ is rarely propagated explicitly to next layers. So called activation function is used instead. The one introduced in this section is called sigmoid (\autoref{eq:sigmoid}). The updated model of simple neural network from \autoref{fig:no_activation_net} is shown in \autoref{fig:activation_net}. One thing worth pointing out is a difference between sigmoid and softmax function (\autoref{eq:softmax}) - both used in artificial neural networks. Whereas sigmoid inputs a single value and outputs a normalized scalar, softmax inputs a list of values and outputs a vector of real numbers in range [0, 1] that add up to 1, thus can be interpreted as a probability distribution. Sigmoid is used in hidden units, while softmax is usually applied in the last output layer. Both functions can be categorized as logistic functions.\\
 
 \begin{figure}[h]
 \includegraphics[width=0.7\textwidth]{activation_net}
@@ -279,7 +279,7 @@ In \autoref{fig:input} a reader can see a common representation of a grayscale i
 \label{fig:cnn_spacial}
 \end{figure}
 
-The standard reference for ConvNets is \textit{"Object Recognition with Gradient-Based Learning"} by LeCun et al. (1999) \cite{lecun_object}. This section attempts to explain basic building blocks of the system designed in that paper, called LeNet-5 (\autoref{fig:lecun_net}). Since I've already mentioned about fully connected layers (standard NN layers) in the previous chapter and about flattening a matrix in \autoref{fig:regular_net_image}, I will focus on:
+The standard reference for ConvNets is \textit{"Object Recognition with Gradient-Based Learning"} by LeCun et al. (1999) \cite{lecun_object}. This section attempts to explain 2 most basic building blocks of the system designed in that paper, called LeNet-5 (\autoref{fig:lecun_net}), which are:
 \begin{enumerate}[1)]
 \item convolutional layer,
 \item subsampling layer.

@@ -19,7 +19,7 @@
 \setcounter{page}{1}
 
 \section{Problem definition} \label{problem_definition}
-Report on the alcoholic beverages market in Poland, performed by audit company KPMG \cite{kpmg_alco}, claims, that in 2013, Poles spent 41.1 billion zlotys on alcohol, with beer being a large portion of that amount (47\%). The report also states that, as of 2014, Polish customers choose beers based on premiumisation (31\% of customers), innovation (29\%) and region affiliations (30\%), with manufacturers predicting significant rise of interest in those attributes in the future. The evolution in customers' taste and their openness resulted in many local shops offering a vast range of, so called, "craft beers" coming from lesser known breweries. However, it's also not uncommon to stumble upon large product shelves, with dozens different beers types, in more popular Polish stores like Lidl and Carrefour.\\
+Report on the alcoholic beverages market in Poland, performed by audit company KPMG \cite{kpmg_alco}, claims, that in 2013, Poles spent 41.1 billion zlotys on alcohol, with beer being a large portion of that amount (47\%). The report also states that, as of 2014, Polish customers choose beers based on premiumisation (31\% of customers), innovation (29\%) and region affiliations (30\%), with manufacturers predicting significant rise of interest in those attributes in the future. The evolution in customers' taste and their openness resulted in many local shops offering a vast range of, so called, "craft beers" coming from lesser known breweries. However, it's also not uncommon to stumble upon large product shelves, with dozens different beers types, in more popular Polish stores.\\
 
 \begin{figure}[h]
 \includegraphics[width=0.5\textwidth]{beer_shelf}
@@ -171,7 +171,7 @@ where:
 \item[$p_i$] is the $i^{th}$ element of probability vector $p$ predicted by the classifier.
 \end{itemize}
 
-Ad 2. Unit's value $in_i^{(k)}$ is rarely propagated explicitly to next layers. So called activation function is used instead. The one I'll be introducing in this section is called sigmoid (\autoref{eq:sigmoid}). The updated model of simple neural network from \autoref{fig:no_activation_net} is shown in \autoref{fig:activation_net}. One thing worth pointing out is a difference between sigmoid and softmax function (\autoref{eq:softmax}) - both used in artificial neural networks. Whereas sigmoid inputs a single value and outputs a normalized scalar, softmax inputs a list of values and outputs a vector of real numbers in range [0, 1] that add up to 1, thus can be interpreted as a probability distribution. Sigmoid is used in hidden units, while softmax is usually applied in the last output layer. Both functions can be categorized as logistic functions.\\
+Ad 2. Unit's value $in_i^{(k)}$ is rarely propagated explicitly to next layers. So called activation function is used instead. The one introduced in this section is called sigmoid (\autoref{eq:sigmoid}). The updated model of simple neural network from \autoref{fig:no_activation_net} is shown in \autoref{fig:activation_net}. One thing worth pointing out is a difference between sigmoid and softmax function (\autoref{eq:softmax}) - both used in artificial neural networks. Whereas sigmoid inputs a single value and outputs a normalized scalar, softmax inputs a list of values and outputs a vector of real numbers in range [0, 1] that add up to 1, thus can be interpreted as a probability distribution. Sigmoid is used in hidden units, while softmax is usually applied in the last output layer. Both functions can be categorized as logistic functions.\\
 
 \begin{figure}[h]
 \includegraphics[width=0.7\textwidth]{activation_net}
@@ -538,11 +538,11 @@ Vize.ai is an example of service allowing to easily create custom neural network
 \clearpage
 
 \section{Conclusions} \label{conclusions}
-The evolution in customers' taste and their openness to local breweries resulted in a huge variety of beers available in popular Polish stores like Lidl or Carrefour. Despite this fact, customers still find it cumbersome to choose which product to buy.\\
+The evolution in customers' taste and their openness to local breweries resulted in a huge variety of beers available in popular Polish stores. Despite this fact, customers still find it cumbersome to choose which product to buy.\\
 
 When faced with a mobile app with beer database, users consider it the most attractive to access beer details by making a photo of front beer label. Scanning bar code seems to be the least popular.\\
 
-Artificial Intelligence (deep learning in particular) incorporated in a mobile application can itself be a driving force behind rapid growth rate of users, following the likes of Shazam.\\
+Artificial Intelligence (deep learning in particular) incorporated in an application can itself be a driving force behind rapid growth rate of users, following the likes of e. g. Shazam (mobile app used to recognize name of a song, given few seconds of its melody).\\
 
 Recent increase in performance of GPUs and data available on the Internet provide a fertile ground for machine learning algorithms, such as neural networks.\\
 
