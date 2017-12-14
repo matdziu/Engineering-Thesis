@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.23)  14 DEC 2017 21:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.23)  14 DEC 2017 21:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1423,9 +1423,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 593--594
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 597--598
+
+ []
+
 [28
 
-] (./thesis.bbl
+] [29] (./thesis.bbl
 Underfull \hbox (badness 2846) in paragraph at lines 15--18
 []\T1/cmr/m/it/10.95 Repository of scripts per-form-ing data aug-men-ta-tion\T1
 /cmr/m/n/10.95 .  []$\T1/cmtt/m/n/10.95 https : / / github . com / matdziu /
@@ -1437,22 +1447,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--81
 /n/10.95 http : / / michaelgalloy . com / 2013 / 06 / 11 /
  []
 
-[29
+[30
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 601.
- [30]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 601.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 610.
+ [31]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 610.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 601.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 601.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 610.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 610.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 6F2CF7C52498510809EEB4E22E1B0EE7;764.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 601.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 610.
  ) 
 Here is how much of TeX's memory you used:
- 8235 strings out of 492995
- 116851 string characters out of 6132703
+ 8239 strings out of 492995
+ 116879 string characters out of 6132703
  223321 words of memory out of 5000000
  11447 multiletter control sequences out of 15000+600000
  13062 words of font info for 39 fonts, out of 8000000 for 9000
@@ -1475,10 +1485,10 @@ ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2017/te
 xmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on thesis.pdf (31 pages, 7385548 bytes).
+Output written on thesis.pdf (32 pages, 7386337 bytes).
 PDF statistics:
- 659 PDF objects out of 1000 (max. 8388607)
- 529 compressed objects within 6 object streams
- 191 named destinations out of 1000 (max. 500000)
+ 667 PDF objects out of 1000 (max. 8388607)
+ 536 compressed objects within 6 object streams
+ 195 named destinations out of 1000 (max. 500000)
  280 words of extra memory for PDF output out of 10000 (max. 10000000)
 

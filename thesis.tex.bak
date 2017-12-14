@@ -592,6 +592,15 @@ Flask proved to be small and reliable framework for REST API creation. The proto
 
 Implemented beer label classifier can achieve at least 87\% accuracy under user-friendly conditions, with inference time not exceeding 0.2 second. Aggregation of additional beer labels does not significantly change accuracy nor recognition time. It can be concluded, that drastic increase in number of classes, which CNN is capable of identifying, will result in a classifier, which inference time won't surpass 1 second, while still maintaining around 90\% success rate. \\
 
+The accuracy of proposed solution does not depend on lighting conditions of taken image, however it is prone to failure when recognizing photos with a lot of noisy background.\\
+
+Further development of this project could involve: 
+\begin{enumerate}[a)]
+\item migrating to database, which supports better querying engine,
+\item migrating from convolutional neural network to recently popular capsule networks for increased robustness (e. g. increased accuracy given a lot of background noise),
+\item fine-tuning implemented CNN using different 
+\end{enumerate}
+
 There seems to be no popular and continuously maintained application solving beer label recognition problem using deep learning. Untappd app's developers implemented bar code scanning to accelerate beer database access. On the other hand, Vivino is using OCR but for wines only. Once popular NextGlass mobile application has not been updated since 2015. 
 \clearpage
 

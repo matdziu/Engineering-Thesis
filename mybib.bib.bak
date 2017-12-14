@@ -68,19 +68,19 @@ howpublished = "\url{https://en.wikipedia.org/wiki/RGB_color_model}"
 }
 
 @misc{android_app_repo,
-title = {Repository of Android application used for beer label recognition},
+title = {Repository of {Android} application used for beer label recognition},
 year = {access: December 14, 2017}, 
 howpublished = "\url{https://github.com/matdziu/BeerAI-App}"
 }
 
 @misc{flask_server_repo,
-title = {Repository of REST server (Flask) used for receiving beer label image from client},
+title = {Repository of {REST} server ({Flask}) used for receiving beer label image from client and sending predictions},
 year = {access: December 14, 2017}, 
 howpublished = "\url{https://github.com/matdziu/BeerAI-Server}"
 }
 
 @misc{cnn_repo,
-title = {Repository of scripts performing inference and training of CNN},
+title = {Repository of scripts performing inference and training of {CNN}},
 year = {access: December 14, 2017}, 
 howpublished = "\url{https://github.com/matdziu/BeerAI-Model}"
 }
