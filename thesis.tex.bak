@@ -43,8 +43,8 @@ Design and implementation of server-client recognition system for beer labels.
 	\item Developing Android application for capturing and sending images to predict to server.
 	\end{enumerate}
 
-\item \textbf{Thesis.}
-Implemented beer label classifier is scalable and can achieve at least 90\% accuracy under user-friendly conditions, with inference time not exceeding 1 second.
+\item \textbf{Thesis.}\\
+Implemented convolutional neural network, classifying beer labels, is scalable and can achieve at least 85\% accuracy under user-friendly conditions, with inference time not exceeding 1 second.
 \end{enumerate}
 \clearpage
 
