@@ -1,0 +1,38 @@
+\select@language {english}
+\select@language {polish}
+\select@language {english}
+\contentsline {figure}{\numberline {1}{\ignorespaces Du\IeC {\.z}a p\IeC {\'o}\IeC {\l }ka z piwami}}{2}{figure.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces \IeC {\'S}rednia wa\IeC {\.z}ona respondent\IeC {\'o}w (wykres)}}{3}{figure.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces \IeC {\'S}rednia wa\IeC {\.z}ona respondent\IeC {\'o}w (tabela)}}{4}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces System rozpoznawania etykiet piwa typu serwer-klient}}{4}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Wydajno\IeC {\'s}\IeC {\'c} kart graficznych NVIDIA w por\IeC {\'o}wnaniu do procesor\IeC {\'o}w Intel}}{7}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces \IeC {\'S}wiatowy ruch internetowy liczony wzgl\IeC {\k e}dem urz\IeC {\k a}dze\IeC {\'n}}}{7}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Prosta sie\IeC {\'c} neuronowa z jedn\IeC {\k a} warstw\IeC {\k a} ukryt\IeC {\k a}}}{8}{figure.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Przyk\IeC {\l }adowe wej\IeC {\'s}cie, wyj\IeC {\'s}cie i po\IeC {\.z}\IeC {\k a}dane wyj\IeC {\'s}cie rozpoznawarki}}{9}{figure.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Prosta sie\IeC {\'c} neuronowa z funkcj\IeC {\k a} aktywacyjn\IeC {\k a}}}{10}{figure.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Prosta sie\IeC {\'c} neuronowa z funkcj\IeC {\k a} aktywacyjn\IeC {\k a} sigmoid}}{11}{figure.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Propagacja wsteczna przy u\IeC {\.z}yciu regu\IeC {\l }y \IeC {\l }a\IeC {\'n}cuchowej}}{11}{figure.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Obraz liczby 7}}{13}{figure.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Prosta sie\IeC {\'c} neuronowa rozpoznaj\IeC {\k a}ca liczb\IeC {\k e} 7}}{13}{figure.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Podzielenie obrazka na 4 regiony pikseli}}{14}{figure.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Lokalna \IeC {\l }\IeC {\k a}czno\IeC {\'s}\IeC {\'c} wej\IeC {\'s}\IeC {\'c} konwolucyjnej sieci neuronowej (forma wektora)}}{14}{figure.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Lokalna \IeC {\l }\IeC {\k a}czno\IeC {\'s}\IeC {\'c} wej\IeC {\'s}\IeC {\'c} konwolucyjnej sieci neuronowej (forma matrycy)}}{15}{figure.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces LeNet-5}}{15}{figure.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Kolejne kroki konwolucji przy u\IeC {\.z}yciu filtra 2x2}}{15}{figure.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Kolejne kroki techniki max pooling przy u\IeC {\.z}yciu okna 2x2}}{16}{figure.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Por\IeC {\'o}wnanie najlepszych konwolucyjnych sieci neuronowych}}{17}{figure.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Zaawansowana konwolucyjna sie\IeC {\'c} neuronowa bez ostatniej warstwy}}{18}{figure.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Wnioskowanie pierwszej sieci poprzez wykorzystanie tzw. bottleneck features}}{19}{figure.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Wnioskowanie drugiej sieci poprzez wykorzystanie tzw. bottleneck features}}{19}{figure.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Augmentacja danych na znaku STOP}}{20}{figure.24}
+\contentsline {figure}{\numberline {25}{\ignorespaces G\IeC {\l }\IeC {\'o}wny ekran aplikacji na Androida}}{21}{figure.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces Firebase Realtime Database - baza danych w chmurze}}{22}{figure.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Widok serwera od strony terminala}}{22}{figure.27}
+\contentsline {figure}{\numberline {28}{\ignorespaces Zwyk\IeC {\l }a sie\IeC {\'c} neuronowa, kt\IeC {\'o}rej dok\IeC {\l }adno\IeC {\'s}\IeC {\'c} zosta\IeC {\l }a zwi\IeC {\k e}kszona poprzez wykorzystanie techniki transfer learning}}{23}{figure.28}
+\contentsline {figure}{\numberline {29}{\ignorespaces R\IeC {\k e}cznie zebrany zbi\IeC {\'o}r zdj\IeC {\k e}\IeC {\'c}}}{24}{figure.29}
+\contentsline {figure}{\numberline {30}{\ignorespaces Cz\IeC {\k e}\IeC {\'s}\IeC {\'c} zbioru zdj\IeC {\k e}\IeC {\'c} po augmentacji danych}}{24}{figure.30}
+\contentsline {figure}{\numberline {31}{\ignorespaces Dok\IeC {\l }adno\IeC {\'s}\IeC {\'c} rozpoznawarki 10 r\IeC {\'o}\IeC {\.z}nych etykiet piw}}{25}{figure.31}
+\contentsline {figure}{\numberline {32}{\ignorespaces Funkcja b\IeC {\l }\IeC {\k e}du rozpoznawarki 10 r\IeC {\'o}\IeC {\.z}nych etykiet piw}}{25}{figure.32}
+\contentsline {figure}{\numberline {33}{\ignorespaces Wyniki testowania rozpoznawarki 10 r\IeC {\'o}\IeC {\.z}nych etykiet piw}}{26}{figure.33}
+\contentsline {figure}{\numberline {34}{\ignorespaces Dok\IeC {\l }adno\IeC {\'s}\IeC {\'c} rozpoznawarki 20 r\IeC {\'o}\IeC {\.z}nych etykiet piw}}{27}{figure.34}
+\contentsline {figure}{\numberline {35}{\ignorespaces Funkcja b\IeC {\l }\IeC {\k e}du rozpoznawarki 20 r\IeC {\'o}\IeC {\.z}nych etykiet piw}}{27}{figure.35}

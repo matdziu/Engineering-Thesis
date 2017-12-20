@@ -1,11 +1,13 @@
 \select@language {english}
+\select@language {polish}
+\select@language {english}
 \contentsline {section}{\numberline {1}General information}{1}{section.1}
 \contentsline {section}{\numberline {2}Problem definition}{2}{section.2}
 \contentsline {section}{\numberline {3}Solution overview}{3}{section.3}
 \contentsline {section}{\numberline {4}Related solutions}{5}{section.4}
-\contentsline {section}{\numberline {5}Introduction to Artificial Intelligence}{6}{section.5}
-\contentsline {section}{\numberline {6}Introduction to Neural Networks}{8}{section.6}
-\contentsline {section}{\numberline {7}Introduction to Convolutional Neural Networks}{13}{section.7}
+\contentsline {section}{\numberline {5}Introduction to artificial intelligence}{6}{section.5}
+\contentsline {section}{\numberline {6}Introduction to neural networks}{8}{section.6}
+\contentsline {section}{\numberline {7}Introduction to convolutional neural networks}{13}{section.7}
 \contentsline {section}{\numberline {8}Comparison of world-class CNN architectures}{17}{section.8}
 \contentsline {section}{\numberline {9}Transfer learning}{18}{section.9}
 \contentsline {section}{\numberline {10}Data augmentation}{20}{section.10}
