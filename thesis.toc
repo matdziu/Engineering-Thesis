@@ -14,3 +14,4 @@
 \contentsline {section}{\numberline {11}Solution walkthrough}{21}{section.11}
 \contentsline {section}{\numberline {12}Testing}{24}{section.12}
 \contentsline {section}{\numberline {13}Conclusions}{28}{section.13}
+\contentsline {section}{\numberline {14}Necessary translations}{32}{section.14}

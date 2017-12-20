@@ -641,6 +641,37 @@ Further development of this project could involve:
 \bibliographystyle{siam}
 \clearpage
 
+\section{Necessary translations} \label{necessary_trans}
+\addcontentsline{tos}{section}{\protect\numberline{\thesection} Wymagane tłumaczenia}
+Ta sekcja stanowi podsumowanie najważniejszych informacji dotyczących zaprezentowanej pracy dyplomowej.\\
+
+\begin{enumerate}
+\item \textbf{Definicja problemu.}\\
+Przyspieszenie dostępu użytkownika do bazy danych piwa przy wykorzystaniu wizji komputerowej i urządzenia mobilnego.
+
+\item \textbf{Cel utylitarny.}\\
+Zaprojektowanie i implementacja systemu typu serwer-klient służącego do ropoznawania etykiet piwa.
+
+\item \textbf{Cele poznawcze.}
+	\begin{enumerate}
+	\item Badanie wpływu architektury konwolucyjnej sieci neuronowej (KSN) i augmentacji danych na dokładność i czas trenowania rozpoznawarki.
+	\item Zyskanie głębszego zrozumienia problemu wizji komputerowej przy użyciu KSN.
+	\item Znalezienie minimalnej ilości iteracji treningowych i danych potrzebnych w celu osiągnięcia skuteczności rozpoznania nie mniejszej niż 85\%.
+	\end{enumerate}
+
+\item \textbf{Zakres.}
+	\begin{enumerate}
+	\item Implementacja skryptu do augmentacji danych.
+	\item Implementacja skryptu do uzyskiwania tzw. bottleneck features i trenowania konwolucyjnej sieci neuronowej.
+	\item Implementacja serwera REST do wysyłania predykcji.
+	\item Impementacja aplikacji na Androida, pozwalającej na robienie zdjęć i wysyłanie ich na serwer.
+	\end{enumerate}
+
+\item \textbf{Teza.}\\
+Zaimplementowana konwolucyjna sieć neuronowa, rozpoznająca etykiety piwa, jest skalowalna i potrafi osiągnąć co najmniej 85\% dokładności w warunkach przyjaznych dla użytkownika. Czas wnioskowania wspomnianej sieci nie przekracza 1 sekundy.
+\end{enumerate}
+\clearpage
+
 \listoffigures
 
 \end{document}
